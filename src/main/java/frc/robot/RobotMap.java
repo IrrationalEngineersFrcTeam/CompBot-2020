@@ -7,6 +7,8 @@
 
 package frc.robot;
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -24,7 +26,7 @@ public class RobotMap {
   public RobotMap() {
 
     intakeMotor = 0 ;
-    intakeMotorControl = new CANSparkMax(intakeMotor, motorType.kBrushless);
+    intakeMotorControl = new CANSparkMax(intakeMotor, MotorType.kBrushless);
 
 
   }

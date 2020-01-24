@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.Robot;
 
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
@@ -28,7 +29,7 @@ public class intakeRollerSubsystem extends Subsystem {
 
   public void intake() {
 
-    robot.robotmap.intakeMotorControl.set(.5);
+    Robot.robotmap.intakeMotorControl.set(.5);
 
   }
 }

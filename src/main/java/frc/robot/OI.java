@@ -16,12 +16,17 @@ import frc.robot.commands.intakeRollerCommand;
  */
 public class OI {
 
-  Button rollerButton;
+  public Joystick sticcL;
+  public Joystick sticcR;
+  public Button rollerButton;
+  
 
   public OI() {
+    sticcL = new Joystick(0);
+    sticcR = new Joystick(1);
 
-   rollerButton = new JoystickButton(0, 0);
-   rollerButton.whileheld(new intakeRollerCommand());
+   rollerButton = new JoystickButton(sticcL, 0);
+   rollerButton.whileHeld(new intakeRollerCommand());
 
   }
   //// CREATING BUTTONS

@@ -8,8 +8,8 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
 import frc.robot.subsystems.intakeRollerSubsystem;
+import frc.robot.Robot;
 
 
 /**
@@ -18,7 +18,7 @@ import frc.robot.subsystems.intakeRollerSubsystem;
 public class intakeRollerCommand extends Command {
   public intakeRollerCommand() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.intakeRollerSubsystem);
+    requires(Robot.irs);
   }
 
   // Called just before this Command runs the first time
@@ -30,7 +30,7 @@ public class intakeRollerCommand extends Command {
   @Override
   protected void execute() {
 
-    Robot.intakeRollerSubsystem.intake();
+    Robot.irs.intake();
 
   }
 
