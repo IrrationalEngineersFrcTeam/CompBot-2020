@@ -23,10 +23,28 @@ public class RobotMap {
   public CANSparkMax intakeMotorControl;
   public static int intakeMotor;
 
+  public CANSparkMax indexCtrl0;
+  public static int indexM0;
+
+  public CANSparkMax indexCtrl1;
+  public static int indexM1;
+
+ 
+
+
   public RobotMap() {
 
     intakeMotor = 0 ;
+    indexM0 = 1;
+    indexM1 = 2;
+
     intakeMotorControl = new CANSparkMax(intakeMotor, MotorType.kBrushless);
+    indexCtrl0 = new CANSparkMax(indexM0,  MotorType.kBrushless);
+    indexCtrl1 = new CANSparkMax(indexM1,  MotorType.kBrushless);
+    
+  
+  
+    
 
 
   }

@@ -12,9 +12,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
+import edu.wpi.first.wpilibj.DigitalInput;
+import frc.robot.subsystems.indexSub;
 import frc.robot.subsystems.intakeRollerSubsystem;
-
+import com.revrobotics.CANSparkMax;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -24,8 +25,12 @@ import frc.robot.subsystems.intakeRollerSubsystem;
  */
 public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
   public static intakeRollerSubsystem irs;
+  public static indexSub indexs;
+  public static DigitalInput indexLimitSwitch;
   public static OI oi;
   public static RobotMap robotmap;
+  public static boolean indexLST;
+
 
  /* Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -40,6 +45,8 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
     robotmap = new RobotMap();
     oi = new OI();
     irs  = new intakeRollerSubsystem();
+    indexs = new indexSub();
+    indexLimitSwitch = new DigitalInput(0);
     /*m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
@@ -56,6 +63,8 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
    */
   @Override
   public void robotPeriodic() {
+
+    indexLST = indexLimitSwitch.get();
   }
 
   /**
