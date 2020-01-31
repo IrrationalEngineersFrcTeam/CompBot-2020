@@ -26,7 +26,7 @@ public class OI {
     sticcL = new Joystick(0);
     sticcR = new Joystick(1);
 
-   rollerButton = new JoystickButton(sticcL, 0);
+   rollerButton = new JoystickButton(sticcL, 1);
    rollerButton.whileHeld(new intakeRollerCommand());
    
    if(Robot.indexLST)
