@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.intakeRollerCommand;
 import frc.robot.commands.indexCommand;
+import frc.robot.commands.shootCommand;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -20,6 +21,7 @@ public class OI {
   public Joystick sticcL;
   public Joystick sticcR;
   public Button rollerButton;
+  public Button trigger; 
   
 
   public OI() {
@@ -28,6 +30,9 @@ public class OI {
 
    rollerButton = new JoystickButton(sticcL, 1);
    rollerButton.whileHeld(new intakeRollerCommand());
+
+   trigger = new JoystickButton(sticcL, 2);
+   trigger.whileHeld(new shootCommand());
    
    if(Robot.indexLST)
     new indexCommand();

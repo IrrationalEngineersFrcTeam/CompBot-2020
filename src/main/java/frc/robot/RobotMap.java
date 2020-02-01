@@ -30,6 +30,9 @@ public class RobotMap {
   public CANSparkMax indexCtrl1;
   public static int indexM1;
 
+  public CANSparkMax shootCtrl;
+  public static int shootMotor; //<--- fun to say
+
  
 
 
@@ -42,7 +45,8 @@ public class RobotMap {
     intakeMotorControl = new CANSparkMax(intakeMotor, MotorType.kBrushless);
     indexCtrl0 = new CANSparkMax(indexM0,  MotorType.kBrushless);
     indexCtrl1 = new CANSparkMax(indexM1,  MotorType.kBrushless);
-    
+    shootCtrl = new CANSparkMax(shootMotor, MotorType.kBrushless);
+                              
   
   
     

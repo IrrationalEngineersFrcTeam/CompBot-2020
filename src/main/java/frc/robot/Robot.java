@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.DigitalInput;
 import frc.robot.subsystems.indexSub;
+import frc.robot.subsystems.shooterSub;
 import frc.robot.subsystems.intakeRollerSubsystem;
 import com.revrobotics.CANSparkMax;
 /**
@@ -26,6 +27,7 @@ import com.revrobotics.CANSparkMax;
 public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
   public static intakeRollerSubsystem irs;
   public static indexSub indexs;
+  public static shooterSub RCP90;
   public static DigitalInput indexLimitSwitch;
   public static OI oi;
   public static RobotMap robotmap;
@@ -46,6 +48,7 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
     oi = new OI();
     irs  = new intakeRollerSubsystem();
     indexs = new indexSub();
+    RCP90 = new shooterSub();
     indexLimitSwitch = new DigitalInput(0);
     /*m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
