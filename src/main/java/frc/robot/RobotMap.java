@@ -20,6 +20,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  * floating around.
  */
 public class RobotMap {
+
   public CANSparkMax intakeMotorControl;
   public static int intakeMotor;
 
@@ -34,9 +35,9 @@ public class RobotMap {
 
   public RobotMap() {
 
-    intakeMotor = 0 ;
-    indexM0 = 1;
-    indexM1 = 2;
+    intakeMotor = 1 ;
+    indexM0 = 2;
+    indexM1 = 3;
 
     intakeMotorControl = new CANSparkMax(intakeMotor, MotorType.kBrushless);
     indexCtrl0 = new CANSparkMax(indexM0,  MotorType.kBrushless);
