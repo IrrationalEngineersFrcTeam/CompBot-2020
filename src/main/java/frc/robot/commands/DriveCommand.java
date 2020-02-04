@@ -36,7 +36,8 @@ public class DriveCommand extends Command {
     double SpeedXL = Robot.oi.sticcL.getX();
     double SpeedXR = Robot.oi.sticcR.getX();
       
-    Robot.drive_sub.TankDrive(SpeedL, SpeedR); //needs to be fixed
+    Robot.drive_sub.TankDrive(SpeedL, SpeedR);
+   }
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
