@@ -33,21 +33,39 @@ public class RobotMap {
   public CANSparkMax shootCtrl;
   public static int shootMotor; //<--- fun to say
 
- 
+  public static int MotorL1;
+  public static int MotorL2;
+  public static int MotorR1;
+  public static int MotorR2;
+
+  public CANSparkMax MotorL1Control;
+  public CANSparkMax MotorL2Control;
+  public CANSparkMax MotorR1Control;
+  public CANSparkMax MotorR2Control;
 
 
   public RobotMap() {
 
+    
     intakeMotor = 1 ;
     indexM0 = 2;
     indexM1 = 3;
+    shootMotor = 4;
+
+    MotorL1 = 5;
+    MotorL2 = 6;
+    MotorR1 = 7;
+    MotorR2 = 8;
 
     intakeMotorControl = new CANSparkMax(intakeMotor, MotorType.kBrushless);
     indexCtrl0 = new CANSparkMax(indexM0,  MotorType.kBrushless);
     indexCtrl1 = new CANSparkMax(indexM1,  MotorType.kBrushless);
     shootCtrl = new CANSparkMax(shootMotor, MotorType.kBrushless);
                               
-  
+    MotorL1Control = new CANSparkMax(MotorL1 , MotorType.kBrushless);
+    MotorL2Control = new CANSparkMax(MotorL2 , MotorType.kBrushless);
+    MotorR1Control = new CANSparkMax(MotorR1 , MotorType.kBrushless);
+    MotorR2Control = new CANSparkMax(MotorR2 , MotorType.kBrushless);
   
     
 
