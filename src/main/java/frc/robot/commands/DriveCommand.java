@@ -31,9 +31,11 @@ public class DriveCommand extends Command {
   protected void execute() {
     //This creates two variables that are equal to the angle of joysticks
     //These will be usefull to the drive subsystem 
-    double SpeedR = Robot.oi.StickR.getY();
-    double SpeedLY = Robot.oi.StickL.getY();
-    double SpeedLX = Robot.oi.StickL.getX();
+    double SpeedL = Robot.oi.sticcL.getY();
+    double SpeedR = Robot.oi.sticcR.getY();
+    double SpeedXL = Robot.oi.sticcL.getX();
+    double SpeedXR = Robot.oi.sticcR.getX();
+      
     Robot.drive_sub.TankDrive(SpeedL, SpeedR); //needs to be fixed
   // Make this return true when this Command no longer needs to run execute()
   @Override
