@@ -17,7 +17,6 @@ import frc.robot.subsystems.indexSub;
 import frc.robot.subsystems.driveSub; 
 import frc.robot.subsystems.shooterSub;
 import frc.robot.subsystems.intakeRollerSubsystem;
-import com.revrobotics.CANSparkMax;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -31,9 +30,9 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
   public static driveSub drive_sub;
   public static shooterSub RCP90;
   public static DigitalInput indexLimitSwitch;
-  public static OI oi;
   public static RobotMap robotmap;
   public static boolean indexLST;
+  public static OI oi;
 
 
  /* Command m_autonomousCommand;
@@ -71,6 +70,7 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
   public void robotPeriodic() {
 
     indexLST = indexLimitSwitch.get();
+    
   }
 
   /**

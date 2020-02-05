@@ -9,9 +9,7 @@ package frc.robot;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -21,16 +19,16 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class RobotMap {
 
+  //This is where you create the motor controller, or anything else that needs to be made for robotmap
   public CANSparkMax intakeMotorControl;
-  public static int intakeMotor;
-
   public CANSparkMax indexCtrl0;
-  public static int indexM0;
-
   public CANSparkMax indexCtrl1;
-  public static int indexM1;
-
   public CANSparkMax shootCtrl;
+
+  //This is where you create the motor ID, for CAN or PWM
+  public static int intakeMotor;
+  public static int indexM0;
+  public static int indexM1;
   public static int shootMotor; //<--- fun to say
 
   public static int MotorL1;
@@ -46,7 +44,8 @@ public class RobotMap {
 
   public RobotMap() {
 
-    
+
+    //This is where you give the motor ID it's value
     intakeMotor = 1 ;
     indexM0 = 2;
     indexM1 = 3;
@@ -57,6 +56,7 @@ public class RobotMap {
     MotorR1 = 7;
     MotorR2 = 8;
 
+    //This is where you give the motor controller it's CAN ID and type
     intakeMotorControl = new CANSparkMax(intakeMotor, MotorType.kBrushless);
     indexCtrl0 = new CANSparkMax(indexM0,  MotorType.kBrushless);
     indexCtrl1 = new CANSparkMax(indexM1,  MotorType.kBrushless);

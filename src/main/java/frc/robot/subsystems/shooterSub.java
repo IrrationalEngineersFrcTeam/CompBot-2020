@@ -29,7 +29,7 @@ public class shooterSub extends Subsystem {
 
   public void shoot() {
 
-    Robot.robotmap.shootCtrl.set(.5);
+    Robot.robotmap.shootCtrl.set(.75);
 
   }
 }
