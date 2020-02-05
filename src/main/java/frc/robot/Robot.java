@@ -47,11 +47,11 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
   public void robotInit() {
     robotmap = new RobotMap();
     drive_sub = new driveSub();
-    oi = new OI();
     irs  = new intakeRollerSubsystem();
     indexs = new indexSub();
     RCP90 = new shooterSub();
     indexLimitSwitch = new DigitalInput(0);
+	  oi = new OI(); //oi needs to be at the end!!!!
     /*m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
