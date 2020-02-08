@@ -47,8 +47,8 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
   public static double VaY;
   public static double VTA;
   public static double IsSeen;
-  //oi must be at the end!!!
-  public static OI oi;
+  public static boolean seenToBool;
+  public static OI oi;  //oi must be at the end!!!
 
 
  /* Command m_autonomousCommand;
@@ -100,10 +100,12 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
     VTA = ta.getDouble(0.0);
     IsSeen = tv.getDouble(0.0);
 
+    seenToBool = (IsSeen == 1) ? true : false;
+
     SmartDashboard.putNumber("LimelightX", VaX);
     SmartDashboard.putNumber("LimelightY", VaY);
     SmartDashboard.putNumber("LimelightArea", VTA);
-    SmartDashboard.putNumber("ValidTaregtFound", IsSeen);
+    SmartDashboard.putBoolean("targetFound", seenToBool);
 
     
   }
