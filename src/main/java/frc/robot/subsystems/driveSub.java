@@ -37,11 +37,13 @@ public class driveSub extends Subsystem {
 		Robot.robotmap.MotorL2Control.set(-SpeedL * 0.65);
 		Robot.robotmap.MotorR1Control.set(SpeedR * 0.65);
     Robot.robotmap.MotorR2Control.set(SpeedR * 0.65); 
+    
   }
 
-  public void shoot() {
+  //why is this in here?
+  // public void shoot() {
 
-    Robot.robotmap.shootCtrl.set(.5);
+  //   Robot.robotmap.shootCtrl.set(.5);
 
-  }
+  // }
 }
