@@ -17,7 +17,7 @@ import frc.robot.Robot;
 public class shootCommand extends Command {
   public shootCommand() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.RCP90);
+    requires(Robot.shootersub);
   }
 
   // Called just before this Command runs the first time
@@ -29,7 +29,7 @@ public class shootCommand extends Command {
   @Override
   protected void execute() {
 
-    Robot.RCP90.shoot();
+    Robot.shootersub.shoot();
 
   }
 

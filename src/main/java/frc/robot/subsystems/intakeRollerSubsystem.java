@@ -13,11 +13,11 @@ import frc.robot.Robot;
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  */
-public class intakeRollerSubsystem extends Subsystem {
+public class IntakeRollerSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  public intakeRollerSubsystem() {
+  public IntakeRollerSubsystem() {
     
   }
 

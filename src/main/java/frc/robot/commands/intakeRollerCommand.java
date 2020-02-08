@@ -17,7 +17,7 @@ import frc.robot.Robot;
 public class intakeRollerCommand extends Command {
   public intakeRollerCommand() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.irs);
+    requires(Robot.intakesub);
   }
 
   // Called just before this Command runs the first time

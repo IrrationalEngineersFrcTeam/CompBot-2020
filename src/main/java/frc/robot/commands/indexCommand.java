@@ -17,7 +17,7 @@ import frc.robot.Robot;
 public class indexCommand extends Command {
   public indexCommand() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.indexs);
+    requires(Robot.indexsub);
   }
 
   // Called just before this Command runs the first time

@@ -12,11 +12,14 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.DigitalInput;
-import frc.robot.subsystems.indexSub;
-import frc.robot.subsystems.driveSub; 
-import frc.robot.subsystems.shooterSub;
-import frc.robot.subsystems.intakeRollerSubsystem;
+import frc.robot.subsystems.IndexSub;
+import frc.robot.subsystems.DriveSub; 
+import frc.robot.subsystems.ShooterSub;
+import frc.robot.subsystems.IntakeRollerSubsystem;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -25,13 +28,24 @@ import frc.robot.subsystems.intakeRollerSubsystem;
  * project.
  */
 public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
-  public static intakeRollerSubsystem irs;
-  public static indexSub indexs;
-  public static driveSub drive_sub;
-  public static shooterSub RCP90;
+  public static IntakeRollerSubsystem irs;
+  public static IndexSub indexs;
+  public static DriveSub drive_sub;
+  public static ShooterSub shootersub;
+  public static IndexSub indexsub;
+  public static IntakeRollerSubsystem intakesub;
   public static DigitalInput indexLimitSwitch;
   public static RobotMap robotmap;
   public static boolean indexLST;
+  public static NetworkTableInstance inst;
+  public static NetworkTable LimelightTable;
+  public static NetworkTableEntry ty;
+  public static NetworkTableEntry tx;
+  public static NetworkTableEntry ta;
+  public static double VaX;
+  public static double VaY;
+  public static double VTA;
+  //oi must be at the end!!!
   public static OI oi;
 
 
@@ -46,12 +60,19 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
   @Override
   public void robotInit() {
     robotmap = new RobotMap();
-    drive_sub = new driveSub();
-    irs  = new intakeRollerSubsystem();
-    indexs = new indexSub();
-    RCP90 = new shooterSub();
+    drive_sub = new DriveSub();
+    intakesub  = new IntakeRollerSubsystem();
+    indexsub = new IndexSub();
+    shootersub = new ShooterSub();
     indexLimitSwitch = new DigitalInput(0);
-	  oi = new OI(); //oi needs to be at the end!!!!
+    inst = NetworkTableInstance.getDefault();
+    LimelightTable = inst.getTable("limelight");
+    tx = LimelightTable.getEntry("tx");
+    ty = LimelightTable.getEntry("ty");
+    ta = LimelightTable.getEntry("ta");
+    //oi needs to be at the end!!!!
+    oi = new OI(); 
+  
     /*m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
@@ -70,6 +91,14 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
   public void robotPeriodic() {
 
     indexLST = indexLimitSwitch.get();
+
+    double AngleXvision = tx.getDouble(0.0);
+    double AngleYvision = ty.getDouble(0.0);
+    double VisionTargetArea = ta.getDouble(0.0);
+
+    VaX = AngleXvision;
+    VaY = AngleYvision;
+    VTA = VisionTargetArea;
     
   }
 

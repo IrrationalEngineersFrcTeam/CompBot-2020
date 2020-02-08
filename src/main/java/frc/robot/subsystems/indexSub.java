@@ -12,11 +12,11 @@ import frc.robot.Robot;
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  */
-public class indexSub extends Subsystem {
+public class IndexSub extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  public indexSub() {
+  public IndexSub() {
     
   }
 
