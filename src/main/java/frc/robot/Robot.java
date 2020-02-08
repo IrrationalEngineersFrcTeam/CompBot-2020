@@ -42,9 +42,11 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
   public static NetworkTableEntry ty;
   public static NetworkTableEntry tx;
   public static NetworkTableEntry ta;
+  public static NetworkTableEntry tv;
   public static double VaX;
   public static double VaY;
   public static double VTA;
+  public static double IsSeen;
   //oi must be at the end!!!
   public static OI oi;
 
@@ -70,6 +72,7 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
     tx = LimelightTable.getEntry("tx");
     ty = LimelightTable.getEntry("ty");
     ta = LimelightTable.getEntry("ta");
+    tv = LimelightTable.getEntry("tv");
     //oi needs to be at the end!!!!
     oi = new OI(); 
   
@@ -92,13 +95,16 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
 
     indexLST = indexLimitSwitch.get();
 
-    double AngleXvision = tx.getDouble(0.0);
-    double AngleYvision = ty.getDouble(0.0);
-    double VisionTargetArea = ta.getDouble(0.0);
+    VaX = tx.getDouble(0.0);
+    VaY = ty.getDouble(0.0);
+    VTA = ta.getDouble(0.0);
+    IsSeen = tv.getDouble(0.0);
 
-    VaX = AngleXvision;
-    VaY = AngleYvision;
-    VTA = VisionTargetArea;
+    SmartDashboard.putNumber("LimelightX", VaX);
+    SmartDashboard.putNumber("LimelightY", VaY);
+    SmartDashboard.putNumber("LimelightArea", VTA);
+    SmartDashboard.putNumber("ValidTaregtFound", IsSeen);
+
     
   }
 
