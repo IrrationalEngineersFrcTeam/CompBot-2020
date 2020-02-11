@@ -48,6 +48,7 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
   public static double VTA;
   public static double IsSeen;
   public static boolean seenToBool;
+  public static boolean StartTracking;
   public static OI oi;  //oi must be at the end!!!
 
 
@@ -99,6 +100,7 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
     VaY = ty.getDouble(0.0);
     VTA = ta.getDouble(0.0);
     IsSeen = tv.getDouble(0.0);
+    StartTracking = oi.visionTracking.get();
 
     seenToBool = (IsSeen == 1) ? true : false;
 

@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
+/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
@@ -10,13 +10,10 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-
-/**
- * An example command.  You can replace me with your own command.
- */
-public class DriveCommand extends Command {
-  public DriveCommand() {
+public class visionTrackinCommand extends Command {
+  public visionTrackinCommand() {
     // Use requires() here to declare subsystem dependencies
+    // eg. requires(chassis);
     requires(Robot.drive_sub);
   }
 
@@ -27,20 +24,25 @@ public class DriveCommand extends Command {
 
   // Called repeatedly when this Command is scheduled to run
   @Override
-  protected void execute() {
-    //This creates two variables that are equal to the angle of joysticks
+  protected void execute() 
+  {
+
+     //This creates two variables that are equal to the angle of joysticks
     //These will be usefull to the drive subsystem 
     double SpeedL = Robot.oi.sticcL.getY();
     double SpeedR = Robot.oi.sticcR.getY();
     double SpeedXL = Robot.oi.sticcL.getX();
     double SpeedXR = Robot.oi.sticcR.getX();
+
+    double TurnVoltageVision = Robot.drive_sub.VisionTurn(Robot.VaX);
       
-    if(Robot.StartTracking == false)
+    if(Robot.StartTracking == true)
     {
-    Robot.drive_sub.TankDrive(SpeedL, SpeedR);
+    Robot.drive_sub.ArcadeDrive(SpeedR, TurnVoltageVision);
     }
-    
-   }
+
+  }
+
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {

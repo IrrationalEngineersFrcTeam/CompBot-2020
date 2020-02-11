@@ -40,10 +40,36 @@ public class DriveSub extends Subsystem {
     
   }
 
-  //why is this in here?
-  // public void shoot() {
+  public void ArcadeDrive(double DrivForward, double DriveTurn)
+  {
 
-  //   Robot.robotmap.shootCtrl.set(.5);
+    double LeftSide;
+    double RightSide;
 
-  // }
+    if(DrivForward > 0)
+    {
+      LeftSide = DrivForward + DriveTurn;
+      RightSide = DrivForward - DriveTurn;
+    }
+    else
+    {
+      LeftSide = DrivForward - DriveTurn;
+      RightSide = DrivForward + DriveTurn;
+    }
+
+    Robot.robotmap.MotorL1Control.set(-LeftSide * 0.4);
+		Robot.robotmap.MotorL2Control.set(-LeftSide * 0.4);
+		Robot.robotmap.MotorR1Control.set(RightSide * 0.4);
+    Robot.robotmap.MotorR2Control.set(RightSide * 0.4);
+
+  }
+
+  public double VisionTurn(double AngleX)
+  {
+
+    return AngleX/27;
+
+  }
+
+
 }
