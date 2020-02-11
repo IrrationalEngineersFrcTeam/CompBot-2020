@@ -25,6 +25,12 @@ public class RobotMap {
   public CANSparkMax indexCtrl1;
   public CANSparkMax shootCtrl;
 
+  //The drive motors
+  public CANSparkMax MotorL1Control;
+  public CANSparkMax MotorL2Control;
+  public CANSparkMax MotorR1Control;
+  public CANSparkMax MotorR2Control;
+
   //This is where you create the motor ID, for CAN or PWM
   public static int intakeMotor;
   public static int indexM0;
@@ -35,11 +41,6 @@ public class RobotMap {
   public static int MotorL2;
   public static int MotorR1;
   public static int MotorR2;
-
-  public CANSparkMax MotorL1Control;
-  public CANSparkMax MotorL2Control;
-  public CANSparkMax MotorR1Control;
-  public CANSparkMax MotorR2Control;
 
 
   public RobotMap() {

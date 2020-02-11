@@ -29,10 +29,11 @@ public class visionTrackinCommand extends Command {
 
      //This creates two variables that are equal to the angle of joysticks
     //These will be usefull to the drive subsystem 
-    double SpeedL = Robot.oi.sticcL.getY();
+    
+    // double SpeedL = Robot.oi.sticcL.getY();
     double SpeedR = Robot.oi.sticcR.getY();
-    double SpeedXL = Robot.oi.sticcL.getX();
-    double SpeedXR = Robot.oi.sticcR.getX();
+    //  double SpeedXL = Robot.oi.sticcL.getX();
+    // double SpeedXR = Robot.oi.sticcR.getX();
 
     double TurnVoltageVision = Robot.drive_sub.VisionTurn(Robot.VaX);
       

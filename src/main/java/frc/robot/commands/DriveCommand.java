@@ -32,14 +32,14 @@ public class DriveCommand extends Command {
     //These will be usefull to the drive subsystem 
     double SpeedL = Robot.oi.sticcL.getY();
     double SpeedR = Robot.oi.sticcR.getY();
-    double SpeedXL = Robot.oi.sticcL.getX();
-    double SpeedXR = Robot.oi.sticcR.getX();
+    // double SpeedXL = Robot.oi.sticcL.getX();
+    //double SpeedXR = Robot.oi.sticcR.getX();
       
     if(Robot.StartTracking == false)
     {
     Robot.drive_sub.TankDrive(SpeedL, SpeedR);
     }
-    
+
    }
   // Make this return true when this Command no longer needs to run execute()
   @Override
