@@ -30,7 +30,7 @@ public class indexCommand extends Command {
   protected void execute() {
     Robot.indexLimitSwitch.get();
     if(!Robot.indexLST)
-      Robot.indexs.index();
+      Robot.indexsub.index();
 
   }
 

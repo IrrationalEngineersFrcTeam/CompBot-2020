@@ -41,6 +41,7 @@ public class visionTrackinCommand extends Command {
     {
     Robot.drive_sub.ArcadeDrive(SpeedR, TurnVoltageVision);
     }
+    System.out.println(TurnVoltageVision);
 
   }
 
