@@ -8,9 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
@@ -108,6 +106,8 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
     SmartDashboard.putNumber("LimelightY", VaY);
     SmartDashboard.putNumber("LimelightArea", VTA);
     SmartDashboard.putBoolean("targetFound", seenToBool);
+
+    System.out.println("Testing, testing, 1 2 3...");
 
     
   }

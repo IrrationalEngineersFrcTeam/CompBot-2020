@@ -47,7 +47,7 @@ public class RobotMap {
 
 
     //This is where you give the motor ID it's value
-    intakeMotor = 1 ;
+    intakeMotor = 1;
     indexM0 = 2;
     indexM1 = 3;
     shootMotor = 4;

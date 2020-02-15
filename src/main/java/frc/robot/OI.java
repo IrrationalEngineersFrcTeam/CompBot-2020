@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.intakeRollerCommand;
 import frc.robot.commands.indexCommand;
 import frc.robot.commands.shootCommand;
+import frc.robot.commands.visionTrackinCommand;
 
 
 
@@ -47,6 +48,7 @@ public class OI {
     //This is where you give the button it's functionality
     intakeButton.whileHeld(new intakeRollerCommand());
     triggerShoot.whileHeld(new shootCommand());
+
 
   }
 

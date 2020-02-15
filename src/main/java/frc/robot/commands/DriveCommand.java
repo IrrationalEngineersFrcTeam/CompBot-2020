@@ -34,13 +34,19 @@ public class DriveCommand extends Command {
     double SpeedR = Robot.oi.sticcR.getY();
     // double SpeedXL = Robot.oi.sticcL.getX();
     //double SpeedXR = Robot.oi.sticcR.getX();
+    double TurnSpeed = Robot.drive_sub.VisionTurn(Robot.VaX);
+
       
     if(Robot.StartTracking == false)
     {
     Robot.drive_sub.TankDrive(SpeedL, SpeedR);
     }
+    else
+    {
+    Robot.drive_sub.ArcadeDrive(SpeedR, TurnSpeed);
+    }
 
-   }
+  }
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {

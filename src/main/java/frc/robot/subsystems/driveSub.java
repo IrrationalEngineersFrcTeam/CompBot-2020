@@ -28,6 +28,18 @@ public class DriveSub extends Subsystem {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
+
+  public double VisionTurn(double AngleX)
+  {
+
+    double angleX = AngleX/27;
+    
+    System.out.println(angleX);
+
+    return angleX;
+
+  }
+
   public void TankDrive(double SpeedL, double SpeedR){
     //This is the code that actually makes the robot drive! It tells the 
     //proper motor controllers to set the motors to desired speed.
@@ -36,6 +48,9 @@ public class DriveSub extends Subsystem {
 		Robot.robotmap.MotorL2Control.set(-SpeedL * 0.65);
 		Robot.robotmap.MotorR1Control.set(SpeedR * 0.65);
     Robot.robotmap.MotorR2Control.set(SpeedR * 0.65); 
+
+    System.out.println(SpeedL);
+    System.out.println(SpeedR);
     
   }
 
@@ -63,12 +78,8 @@ public class DriveSub extends Subsystem {
 
   }
 
-  public double VisionTurn(double AngleX)
-  {
+  
 
-    return AngleX/27;
-
-  }
 
 
 }

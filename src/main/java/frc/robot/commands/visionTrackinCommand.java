@@ -31,17 +31,17 @@ public class visionTrackinCommand extends Command {
     //These will be usefull to the drive subsystem 
     
     // double SpeedL = Robot.oi.sticcL.getY();
-    double SpeedR = Robot.oi.sticcR.getY();
-    //  double SpeedXL = Robot.oi.sticcL.getX();
-    // double SpeedXR = Robot.oi.sticcR.getX();
+    // double SpeedR = Robot.oi.sticcR.getY();
+    // //  double SpeedXL = Robot.oi.sticcL.getX();
+    // // double SpeedXR = Robot.oi.sticcR.getX();
 
-    double TurnVoltageVision = Robot.drive_sub.VisionTurn(Robot.VaX);
+    // double TurnVoltageVision = Robot.drive_sub.VisionTurn(Robot.VaX);
       
-    if(Robot.StartTracking == true)
-    {
-    Robot.drive_sub.ArcadeDrive(SpeedR, TurnVoltageVision);
-    }
-    System.out.println(TurnVoltageVision);
+    // if(Robot.StartTracking == true)
+    // {
+    // Robot.drive_sub.ArcadeDrive(SpeedR, TurnVoltageVision);
+    // }
+
 
   }
 
