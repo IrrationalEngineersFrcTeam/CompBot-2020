@@ -107,7 +107,6 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
     SmartDashboard.putNumber("LimelightArea", VTA);
     SmartDashboard.putBoolean("targetFound", seenToBool);
 
-    System.out.println("Testing, testing, 1 2 3...");
 
     
   }
@@ -174,6 +173,10 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
+
+   // System.out.println(Robot.oi.sticcL.getY());
+   // System.out.println(Robot.oi.sticcR.getY());
+
   }
 
   /**
@@ -181,5 +184,6 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
    */
   @Override
   public void testPeriodic() {
+
   }
 }

@@ -34,8 +34,6 @@ public class DriveSub extends Subsystem {
 
     double angleX = AngleX/27;
     
-    System.out.println(angleX);
-
     return angleX;
 
   }
@@ -48,9 +46,6 @@ public class DriveSub extends Subsystem {
 		Robot.robotmap.MotorL2Control.set(-SpeedL * 0.65);
 		Robot.robotmap.MotorR1Control.set(SpeedR * 0.65);
     Robot.robotmap.MotorR2Control.set(SpeedR * 0.65); 
-
-    System.out.println(SpeedL);
-    System.out.println(SpeedR);
     
   }
 
