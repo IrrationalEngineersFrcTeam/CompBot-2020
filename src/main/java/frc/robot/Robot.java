@@ -41,6 +41,7 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
   public static NetworkTableEntry tx;
   public static NetworkTableEntry ta;
   public static NetworkTableEntry tv;
+  public static NetworkTableEntry ledMode;
   public static double VaX;
   public static double VaY;
   public static double VTA;
@@ -72,6 +73,7 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
     ty = LimelightTable.getEntry("ty");
     ta = LimelightTable.getEntry("ta");
     tv = LimelightTable.getEntry("tv");
+    ledMode = LimelightTable.getEntry("ledMode");
     //oi needs to be at the end!!!!
     oi = new OI(); 
   
