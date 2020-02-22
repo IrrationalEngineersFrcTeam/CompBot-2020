@@ -42,7 +42,7 @@ public class visionTrackinCommand extends Command {
       Robot.drive_sub.TankDrive(0, 0);
       Robot.drive_sub.ArcadeDrive(DriveSpeed, TurnSpeed);
       
-      if(Math.abs(Robot.VaX) <= 2)
+      if(TurnSpeed == 0)
       {
         Robot.shootersub.shoot();
       }

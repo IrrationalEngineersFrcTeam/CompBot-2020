@@ -193,7 +193,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
 
-    System.out.println(Robot.drive_sub.CurrentRoboDistance(VaY, 30, 30));
+    System.out.println(Robot.drive_sub.CurrentRoboDistance(VaY, 30, 30)/12);
    // System.out.println(Robot.oi.sticcL.getY());
    // System.out.println(Robot.oi.sticcR.getY());
 

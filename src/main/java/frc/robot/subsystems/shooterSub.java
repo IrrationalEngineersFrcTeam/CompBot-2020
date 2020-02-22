@@ -31,6 +31,7 @@ public class ShooterSub extends Subsystem {
   public void shoot() {
 
     Robot.robotmap.shootCtrl.set(-1);
+    Robot.robotmap.shooterFeederControl.set(-1);
     Robot.robotmap.indexCtrl.set(-0.25);
 
   }
