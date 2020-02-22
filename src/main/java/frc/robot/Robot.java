@@ -78,6 +78,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     ta = LimelightTable.getEntry("ta");
     tv = LimelightTable.getEntry("tv");
     ledInt = 0;
+    AutoVisTrack = new visionTrackinCommand();
 
     // oi needs to be at the end!!!!
     oi = new OI();
@@ -147,7 +148,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   @Override
   public void autonomousInit() {
 
-    //AutoVisTrack = new visionTrackinCommand();
+    AutoVisTrack.start();
 
     // m_autonomousCommand = m_chooser.getSelected();
 
@@ -170,9 +171,6 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   @Override
   public void autonomousPeriodic() {
     Scheduler.getInstance().run();
-
-    
-
     
 
     }
@@ -183,6 +181,8 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
 
   @Override
   public void teleopInit() {
+
+    AutoVisTrack.cancel();
    
   }
 
