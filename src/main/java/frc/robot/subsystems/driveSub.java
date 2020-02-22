@@ -29,12 +29,30 @@ public class DriveSub extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 
+  //this takes the X angle from the limelight and turns it into a motor output
   public double VisionTurn(double AngleX)
   {
 
-    double angleX = AngleX/27;
+    double angleX = AngleX/29;
     
-    return angleX;
+    return -angleX;
+
+  }
+
+  //This takes the Y angle from the limelight(in degrees), the angle of the mounting of the limelight(in degrees), and the hight of the limeligh(in inches)
+  //and then returns the current distance of the robot to the vision target(in inches)
+  public double RoboDistance(double VisionDegreesY, double MountingDegreesY, double MountingHight)
+  {
+
+    double VisRadiansY = Math.toRadians(VisionDegreesY);
+    double MountRadiansY = Math.toRadians(MountingDegreesY);
+
+    double Hight = 98.25 - MountingHight;
+    double TangentAngle = Math.tan(VisRadiansY + MountRadiansY);
+
+    double CurrentDistance = Hight/TangentAngle;
+
+    return CurrentDistance;
 
   }
 

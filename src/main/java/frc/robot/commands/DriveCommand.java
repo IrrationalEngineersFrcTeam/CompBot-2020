@@ -9,9 +9,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import edu.wpi.first.networktables.NetworkTable;
-import edu.wpi.first.networktables.NetworkTableEntry;
-import edu.wpi.first.networktables.NetworkTableInstance;
+
 
 /**
  * An example command.  You can replace me with your own command.
@@ -42,11 +40,13 @@ public class DriveCommand extends Command {
     if(Robot.StartTracking == false)
     {
     Robot.LimelightTable.getEntry("ledMode").setNumber(1);
+    Robot.ledMode.setNumber(1);
     Robot.drive_sub.TankDrive(SpeedL, SpeedR);
     }
     else
     {
       Robot.LimelightTable.getEntry("ledMode").setNumber(0);
+    Robot.ledMode.setNumber(3);
     Robot.drive_sub.ArcadeDrive(SpeedR, TurnSpeed);
     }
 
