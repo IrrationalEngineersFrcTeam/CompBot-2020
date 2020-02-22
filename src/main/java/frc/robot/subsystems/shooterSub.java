@@ -27,9 +27,11 @@ public class ShooterSub extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 
+  //set to %50 for testing purposes only, remember to put it up again
   public void shoot() {
 
-    Robot.robotmap.shootCtrl.set(-.10);//It is set to %50 for testing purposes only, remember to put it up again
+    Robot.robotmap.shootCtrl.set(-1);
+    Robot.robotmap.indexCtrl.set(-0.25);
 
   }
 }

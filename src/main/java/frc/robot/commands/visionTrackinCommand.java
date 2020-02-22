@@ -32,6 +32,7 @@ public class visionTrackinCommand extends Command {
   {
 
     double DriveSpeed = Robot.drive_sub.AdjustRoboDistance(96, Robot.drive_sub.CurrentRoboDistance(Robot.VaY, 30, 30));
+    double TurnSpeed = Robot.drive_sub.VisionTurn(Robot.VaX);
 
     if(Robot.IsSeen != 1 )
       Robot.drive_sub.TankDrive(.25, -.25);
@@ -39,9 +40,13 @@ public class visionTrackinCommand extends Command {
     else {
 
       Robot.drive_sub.TankDrive(0, 0);
-      TurnSpeed = Robot.drive_sub.VisionTurn(Robot.VaX);
-      Robot.drive_sub.ArcadeDrive(DriveSpeed * 0.4, TurnSpeed);
+      Robot.drive_sub.ArcadeDrive(DriveSpeed, TurnSpeed);
       
+      if(Math.abs(Robot.VaX) <= 2)
+      {
+        Robot.shootersub.shoot();
+      }
+
     }
 
      //This creates two variables that are equal to the angle of joysticks

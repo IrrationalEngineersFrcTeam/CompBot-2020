@@ -51,6 +51,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public static int ledInt;
   public static boolean seenToBool;
   public static boolean StartTracking;
+  public static visionTrackinCommand AutoVisTrack;
   public static OI oi; // oi must be at the end!!!
 
   /*
@@ -146,6 +147,8 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   @Override
   public void autonomousInit() {
 
+    //AutoVisTrack = new visionTrackinCommand();
+
     // m_autonomousCommand = m_chooser.getSelected();
 
     /*
@@ -168,10 +171,10 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public void autonomousPeriodic() {
     Scheduler.getInstance().run();
 
-    new visionTrackinCommand();
+    
 
     
-      
+
     }
     
 

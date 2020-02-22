@@ -25,6 +25,7 @@ public class RobotMap {
   //This is where you create the motor controller, or anything else that needs to be made for robotmap
   public CANSparkMax intakeMotorControl;
   public CANSparkMax shootCtrl;
+  public CANSparkMax shooterFeederControl; //subject to change
   public Spark indexCtrl;
 
   //The drive motors
@@ -37,6 +38,7 @@ public class RobotMap {
   public static int intakeMotor;
   public static int indexMotor;
   public static int shootMotor; //<--- fun to say
+  public static int shooterFeederMotor;
 
   public static int MotorL1;
   public static int MotorL2;
@@ -51,6 +53,7 @@ public class RobotMap {
     intakeMotor = 3;
     indexMotor = 0;
     shootMotor = 1;
+    shooterFeederMotor = 4;
 
     MotorR1 = 5;
     MotorR2 = 6;
@@ -61,6 +64,7 @@ public class RobotMap {
     intakeMotorControl = new CANSparkMax(intakeMotor, MotorType.kBrushless);
     indexCtrl = new Spark(indexMotor);
     shootCtrl = new CANSparkMax(shootMotor, MotorType.kBrushless);
+    shooterFeederControl = new CANSparkMax(shooterFeederMotor, MotorType.kBrushless);
                               
     MotorL1Control = new CANSparkMax(MotorL1 , MotorType.kBrushless);
     MotorL2Control = new CANSparkMax(MotorL2 , MotorType.kBrushless);
