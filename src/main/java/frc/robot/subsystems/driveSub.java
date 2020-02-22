@@ -37,7 +37,14 @@ public class DriveSub extends Subsystem {
 
     double angleX = AngleX/29;
     
+    if(Math.abs(AngleX)<=2)
+    {
+    return 0;
+    }
+    else
+    {
     return -angleX;
+    }
 
   }
 
@@ -71,10 +78,10 @@ public class DriveSub extends Subsystem {
     //This is the code that actually makes the robot drive! It tells the 
     //proper motor controllers to set the motors to desired speed.
       
-    Robot.robotmap.MotorL1Control.set(-SpeedL * 0.65);
-		Robot.robotmap.MotorL2Control.set(-SpeedL * 0.65);
-		Robot.robotmap.MotorR1Control.set(SpeedR * 0.65);
-    Robot.robotmap.MotorR2Control.set(SpeedR * 0.65); 
+    Robot.robotmap.MotorL1Control.set(-SpeedL * 0.7);
+		Robot.robotmap.MotorL2Control.set(-SpeedL * 0.7);
+		Robot.robotmap.MotorR1Control.set(SpeedR * 0.7);
+    Robot.robotmap.MotorR2Control.set(SpeedR * 0.7); 
     
   }
 
