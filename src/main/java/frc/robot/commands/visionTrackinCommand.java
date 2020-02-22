@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class visionTrackinCommand extends Command {
+  public double TurnSpeed;
   public visionTrackinCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -20,6 +21,9 @@ public class visionTrackinCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+
+    Robot.LimelightTable.getEntry("ledMode").setNumber(0);
+
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -27,15 +31,29 @@ public class visionTrackinCommand extends Command {
   protected void execute() 
   {
 
+    
+
+    if(Robot.IsSeen != 1 )
+      Robot.drive_sub.TankDrive(.25, -.25);
+  
+    else {
+
+      
+      Robot.drive_sub.TankDrive(0, 0);
+      TurnSpeed = Robot.drive_sub.VisionTurn(Robot.VaX);
+      Robot.drive_sub.ArcadeDrive(.25, TurnSpeed);
+      
+    }
+
      //This creates two variables that are equal to the angle of joysticks
     //These will be usefull to the drive subsystem 
     
-    // double SpeedL = Robot.oi.sticcL.getY();
+    // double SpeedL = Robot.oi.sticcL.getY();AZ
     // double SpeedR = Robot.oi.sticcR.getY();
     // //  double SpeedXL = Robot.oi.sticcL.getX();
     // // double SpeedXR = Robot.oi.sticcR.getX();
 
-    // double TurnVoltageVision = Robot.drive_sub.VisionTurn(Robot.VaX);
+    //double TurnVoltageVision = Robot.drive_sub.VisionTurn(Robot.VaX);
       
     // if(Robot.StartTracking == true)
     // {
