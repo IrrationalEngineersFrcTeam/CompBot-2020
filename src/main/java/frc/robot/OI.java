@@ -31,6 +31,7 @@ public class OI {
   //This is the place where you create buttons
   public Button intakeButton;
   public Button triggerShoot; 
+  public Button IndexRun; 
   public Button visionTracking;
   
 
@@ -41,13 +42,16 @@ public class OI {
     sticcR = new Joystick(1);
 
     //This is where you initialize the buttons
-    intakeButton = new JoystickButton(sticcL, 1);
-    triggerShoot = new JoystickButton(sticcL, 2);
+    intakeButton = new JoystickButton(sticcL, 2);
+    triggerShoot = new JoystickButton(sticcL, 1);
+    IndexRun = new JoystickButton(sticcR, 2);
     visionTracking = new JoystickButton(sticcR, 1);
 
     //This is where you give the button it's functionality
     intakeButton.whileHeld(new intakeRollerCommand());
     triggerShoot.whileHeld(new shootCommand());
+    IndexRun.whileHeld(new indexCommand());
+    
 
 
   }

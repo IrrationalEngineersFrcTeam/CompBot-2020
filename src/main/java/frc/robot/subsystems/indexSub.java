@@ -27,12 +27,24 @@ public class IndexSub extends Subsystem {
   }
 
   public void index() {
-    Robot.indexLimitSwitch.get();
-    if(Robot.indexLST)
-      return;
-    else{
-     Robot.robotmap.indexCtrl.set(.25);
     
+    if(Robot.indexLST)
+    {
+    Robot.robotmap.indexCtrl.set(.15);
     }
+    else
+    {
+    Robot.robotmap.indexCtrl.set(0);
+    }
+
   }
+
+  public void indexRun() {
+
+    Robot.robotmap.indexCtrl.set(.15);
+
+  }
+
+
+
 }

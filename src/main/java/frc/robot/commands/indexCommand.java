@@ -28,9 +28,8 @@ public class indexCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.indexLimitSwitch.get();
-    if(!Robot.indexLST)
-      Robot.indexsub.index();
+  
+      Robot.indexsub.indexRun();
 
   }
 
