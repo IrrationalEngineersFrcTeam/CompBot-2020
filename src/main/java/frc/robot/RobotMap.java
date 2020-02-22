@@ -6,8 +6,11 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
+
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
+import edu.wpi.first.wpilibj.Spark;
 
 
 
@@ -21,9 +24,8 @@ public class RobotMap {
 
   //This is where you create the motor controller, or anything else that needs to be made for robotmap
   public CANSparkMax intakeMotorControl;
-  public CANSparkMax indexCtrl0;
-  public CANSparkMax indexCtrl1;
   public CANSparkMax shootCtrl;
+  public Spark indexCtrl;
 
   //The drive motors
   public CANSparkMax MotorL1Control;
@@ -33,8 +35,7 @@ public class RobotMap {
 
   //This is where you create the motor ID, for CAN or PWM
   public static int intakeMotor;
-  public static int indexM0;
-  public static int indexM1;
+  public static int indexMotor;
   public static int shootMotor; //<--- fun to say
 
   public static int MotorL1;
@@ -48,19 +49,17 @@ public class RobotMap {
 
     //This is where you give the motor ID it's value
     intakeMotor = 1;
-    indexM0 = 2;
-    indexM1 = 3;
+    indexMotor = 3;
     shootMotor = 4;
 
     MotorL1 = 5;
     MotorL2 = 6;
     MotorR1 = 7;
-    MotorR2 = 8;
+    MotorR2 = 2;
 
     //This is where you give the motor controller it's CAN ID and type
     intakeMotorControl = new CANSparkMax(intakeMotor, MotorType.kBrushless);
-    indexCtrl0 = new CANSparkMax(indexM0,  MotorType.kBrushless);
-    indexCtrl1 = new CANSparkMax(indexM1,  MotorType.kBrushless);
+    indexCtrl = new Spark(indexMotor);
     shootCtrl = new CANSparkMax(shootMotor, MotorType.kBrushless);
                               
     MotorL1Control = new CANSparkMax(MotorL1 , MotorType.kBrushless);

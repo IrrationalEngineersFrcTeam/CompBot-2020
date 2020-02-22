@@ -41,12 +41,12 @@ public class DriveCommand extends Command {
       
     if(Robot.StartTracking == false)
     {
-    NetworkTableInstance.getDefault().getTable("limelight").getEntry("ledMode").setNumber(1);
+    Robot.LimelightTable.getEntry("ledMode").setNumber(1);
     Robot.drive_sub.TankDrive(SpeedL, SpeedR);
     }
     else
     {
-    NetworkTableInstance.getDefault().getTable("limelight").getEntry("ledMode").setNumber(0);
+      Robot.LimelightTable.getEntry("ledMode").setNumber(0);
     Robot.drive_sub.ArcadeDrive(SpeedR, TurnSpeed);
     }
 

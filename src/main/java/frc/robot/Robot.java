@@ -46,6 +46,7 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
   public static double VaY;
   public static double VTA;
   public static double IsSeen;
+  public static int ledInt; 
   public static boolean seenToBool;
   public static boolean StartTracking;
   public static OI oi;  //oi must be at the end!!!
@@ -73,7 +74,8 @@ public class Robot extends TimedRobot { //does not actually mean TimedRobot!!!
     ty = LimelightTable.getEntry("ty");
     ta = LimelightTable.getEntry("ta");
     tv = LimelightTable.getEntry("tv");
-    ledMode = LimelightTable.getEntry("ledMode");
+    ledInt = 0 ;
+    
     //oi needs to be at the end!!!!
     oi = new OI(); 
   

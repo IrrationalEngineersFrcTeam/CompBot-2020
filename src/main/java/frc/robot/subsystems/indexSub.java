@@ -31,8 +31,7 @@ public class IndexSub extends Subsystem {
     if(Robot.indexLST)
       return;
     else{
-     Robot.robotmap.indexCtrl0.set(.25);
-     Robot.robotmap.indexCtrl1.set(.25);
+     Robot.robotmap.indexCtrl.set(.25);
     
     }
   }
