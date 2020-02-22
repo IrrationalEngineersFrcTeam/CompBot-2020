@@ -31,17 +31,16 @@ public class visionTrackinCommand extends Command {
   protected void execute() 
   {
 
-    
+    double DriveSpeed = Robot.drive_sub.AdjustRoboDistance(96, Robot.drive_sub.CurrentRoboDistance(Robot.VaY, 30, 30));
 
     if(Robot.IsSeen != 1 )
       Robot.drive_sub.TankDrive(.25, -.25);
   
     else {
 
-      
       Robot.drive_sub.TankDrive(0, 0);
       TurnSpeed = Robot.drive_sub.VisionTurn(Robot.VaX);
-      Robot.drive_sub.ArcadeDrive(.25, TurnSpeed);
+      Robot.drive_sub.ArcadeDrive(DriveSpeed * 0.4, TurnSpeed);
       
     }
 

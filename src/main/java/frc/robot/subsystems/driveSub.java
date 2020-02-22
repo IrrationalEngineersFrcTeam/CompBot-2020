@@ -43,7 +43,7 @@ public class DriveSub extends Subsystem {
 
   //This takes the Y angle from the limelight(in degrees), the angle of the mounting of the limelight(in degrees), and the hight of the limeligh(in inches)
   //and then returns the current distance of the robot to the vision target(in inches)
-  public double RoboDistance(double VisionDegreesY, double MountingDegreesY, double MountingHight)
+  public double CurrentRoboDistance(double VisionDegreesY, double MountingDegreesY, double MountingHight)
   {
 
     double VisRadiansY = Math.toRadians(VisionDegreesY);
@@ -55,6 +55,15 @@ public class DriveSub extends Subsystem {
     double CurrentDistance = Hight/TangentAngle;
 
     return CurrentDistance;
+
+  }
+
+  public double AdjustRoboDistance(double TargetDist, double CurrentDist)
+  {
+
+    double DeltaX = TargetDist - CurrentDist;
+
+    return DeltaX * -0.1;
 
   }
 

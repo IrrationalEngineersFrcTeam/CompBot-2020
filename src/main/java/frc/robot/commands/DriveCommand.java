@@ -37,6 +37,8 @@ public class DriveCommand extends Command {
     // double SpeedXL = Robot.oi.sticcL.getX();
     //double SpeedXR = Robot.oi.sticcR.getX();
     double TurnSpeed = Robot.drive_sub.VisionTurn(Robot.VaX);
+    //the first number is the target distance in inches
+    double DriveSpeed = Robot.drive_sub.AdjustRoboDistance(96, Robot.drive_sub.CurrentRoboDistance(Robot.VaY, 30, 30));
 
       
     if(Robot.StartTracking == false)
@@ -47,7 +49,9 @@ public class DriveCommand extends Command {
     else
     {
    // Robot.ledMode.setNumber(3);
-    Robot.drive_sub.ArcadeDrive(SpeedR, TurnSpeed);
+    Robot.LimelightTable.getEntry("ledMode").setNumber(0);
+    Robot.ledMode.setNumber(3);
+    Robot.drive_sub.ArcadeDrive(DriveSpeed, TurnSpeed);
     }
 
   }
