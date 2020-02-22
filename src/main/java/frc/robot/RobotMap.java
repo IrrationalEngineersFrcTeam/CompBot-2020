@@ -48,14 +48,14 @@ public class RobotMap {
 
 
     //This is where you give the motor ID it's value
-    intakeMotor = 1;
-    indexMotor = 3;
-    shootMotor = 4;
+    intakeMotor = 3;
+    indexMotor = 0;
+    shootMotor = 1;
 
-    MotorL1 = 5;
-    MotorL2 = 6;
-    MotorR1 = 7;
-    MotorR2 = 2;
+    MotorR1 = 5;
+    MotorR2 = 6;
+    MotorL1 = 7;
+    MotorL2 = 2;
 
     //This is where you give the motor controller it's CAN ID and type
     intakeMotorControl = new CANSparkMax(intakeMotor, MotorType.kBrushless);
