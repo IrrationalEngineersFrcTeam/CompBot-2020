@@ -30,7 +30,7 @@ public class IndexSub extends Subsystem {
     
     if(Robot.indexLST)
     {
-    Robot.robotmap.indexCtrl.set(.15);
+    Robot.robotmap.indexCtrl.set(.5);
     }
     else
     {
@@ -41,7 +41,7 @@ public class IndexSub extends Subsystem {
 
   public void indexRun() {
 
-    Robot.robotmap.indexCtrl.set(.15);
+    Robot.robotmap.indexCtrl.set(.5);
 
   }
 
