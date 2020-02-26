@@ -44,7 +44,7 @@ public class DriveCommand extends Command {
       
     if(Robot.StartTracking == false)
     {
-      Robot.ledMode.setNumber(1);
+      //Robot.ledMode.setNumber(1);
       Robot.drive_sub.TankDrive(SpeedL, SpeedR);
     }
     else
