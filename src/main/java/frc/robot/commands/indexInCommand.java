@@ -14,8 +14,8 @@ import frc.robot.Robot;
 /**
  * An example command.  You can replace me with your own command.
  */
-public class indexCommand extends Command {
-  public indexCommand() {
+public class indexInCommand extends Command {
+  public indexInCommand() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.indexsub);
   }
@@ -28,8 +28,7 @@ public class indexCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-  
-      Robot.indexsub.indexRun();
+      Robot.indexsub.indexRun(-.8);
 
   }
 

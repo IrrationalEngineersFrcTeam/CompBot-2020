@@ -39,9 +39,9 @@ public class IndexSub extends Subsystem {
 
   }
 
-  public void indexRun() {
+  public void indexRun(double x) {
 
-    Robot.robotmap.indexCtrl.set(.5);
+    Robot.robotmap.indexCtrl.set(x);
 
   }
 

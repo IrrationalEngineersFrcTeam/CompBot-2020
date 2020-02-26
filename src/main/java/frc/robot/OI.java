@@ -10,7 +10,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.intakeRollerCommand;
-import frc.robot.commands.indexCommand;
+import frc.robot.commands.indexInCommand;
+import frc.robot.commands.indexOutCommand;
 import frc.robot.commands.shootCommand;
 
 
@@ -31,7 +32,8 @@ public class OI {
   //This is the place where you create buttons
   public Button intakeButton;
   public Button triggerShoot; 
-  public Button IndexRun; 
+  public Button IndexRunIn;
+  public Button IndexRunOut; 
   public Button visionTracking;
   
 
@@ -44,14 +46,15 @@ public class OI {
     //This is where you initialize the buttons
     intakeButton = new JoystickButton(sticcL, 2);
     triggerShoot = new JoystickButton(sticcL, 1);
-    IndexRun = new JoystickButton(sticcR, 2);
+    IndexRunIn = new JoystickButton(sticcR, 2);
+    IndexRunOut = new JoystickButton(sticcR, 8);
     visionTracking = new JoystickButton(sticcR, 1);
 
     //This is where you give the button it's functionality
     intakeButton.whileHeld(new intakeRollerCommand());
     triggerShoot.whileHeld(new shootCommand());
-    IndexRun.whileHeld(new indexCommand());
-    
+    IndexRunIn.whileHeld(new indexInCommand());
+    IndexRunOut.whileHeld(new indexOutCommand());
 
 
   }
