@@ -38,7 +38,7 @@ public class DriveCommand extends Command {
     //double SpeedXR = Robot.oi.sticcR.getX();
     
     double TurnSpeed = Robot.drive_sub.VisionTurn(Robot.VaX);
-    //the first number is the target distance in inches
+    //the first number is the targeted distance from the vision target in inches
     double DriveSpeed = Robot.drive_sub.AdjustRoboDistance(96, Robot.drive_sub.CurrentRoboDistance(Robot.VaY, 30, 30));
 
       
