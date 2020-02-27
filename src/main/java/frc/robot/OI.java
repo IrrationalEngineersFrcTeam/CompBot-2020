@@ -52,6 +52,8 @@ public class OI {
     IndexRunOut = new JoystickButton(sticcR, 8);
     visionTracking = new JoystickButton(sticcR, 1);
 
+    ShootPowerCells = new JoystickButton(sticcR, 5);//Change to appropriate button later
+
     //This is where you give the button it's functionality
     intakeButton.whileHeld(new intakeRollerCommand());
     triggerShoot.whileHeld(new shootCommand());
