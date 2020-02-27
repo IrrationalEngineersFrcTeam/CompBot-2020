@@ -13,6 +13,7 @@ import frc.robot.commands.intakeRollerCommand;
 import frc.robot.commands.indexInCommand;
 import frc.robot.commands.indexOutCommand;
 import frc.robot.commands.shootCommand;
+import frc.robot.commandGroups.ShootPowerCells;
 
 
 
@@ -35,6 +36,7 @@ public class OI {
   public Button IndexRunIn;
   public Button IndexRunOut; 
   public Button visionTracking;
+  public Button ShootPowerCells;
   
 
   public OI() {
@@ -55,6 +57,9 @@ public class OI {
     triggerShoot.whileHeld(new shootCommand());
     IndexRunIn.whileHeld(new indexInCommand());
     IndexRunOut.whileHeld(new indexOutCommand());
+
+    //Command Groups
+    ShootPowerCells.whileHeld(new ShootPowerCells());//We may change the type of trigger this is later, for now this button is for testing
 
 
   }
