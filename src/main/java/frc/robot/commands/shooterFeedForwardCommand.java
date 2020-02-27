@@ -10,8 +10,8 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class shooterFeederBackCommand extends Command {
-  public shooterFeederBackCommand() {
+public class shooterFeedForwardCommand extends Command {
+  public shooterFeedForwardCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -25,7 +25,7 @@ public class shooterFeederBackCommand extends Command {
   @Override
   protected void execute() {
 
-    Robot.shooterfeedersub.shooterFeeder(-.5);
+    Robot.shooterfeedersub.shooterFeeder(.5);
 
   }
 
