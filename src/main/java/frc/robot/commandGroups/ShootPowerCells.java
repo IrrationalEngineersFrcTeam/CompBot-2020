@@ -31,6 +31,7 @@ public class ShootPowerCells extends CommandGroup {
     addParallel(new indexInCommand());
     addParallel(new shooterFeedForwardCommand());
     addParallel(new shootCommand());
+    System.out.println("Shooting!");
     
 
     // To run multiple commands at the same time,
