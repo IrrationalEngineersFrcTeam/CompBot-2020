@@ -17,6 +17,7 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import frc.robot.subsystems.IndexSub;
 import frc.robot.commands.visionTrackinCommand;
 import frc.robot.subsystems.DriveSub; 
+import frc.robot.subsystems.ClimberSub;
 import frc.robot.subsystems.ShooterSub;
 import frc.robot.subsystems.ShooterFeederSub;
 import frc.robot.subsystems.IntakeRollerSubsystem;
@@ -32,6 +33,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public static IntakeRollerSubsystem irs;
   public static IndexSub indexs;
   public static DriveSub drive_sub;
+  public static ClimberSub climbersub;
   public static ShooterSub shootersub;
   public static ShooterFeederSub shooterfeedersub;
   public static IndexSub indexsub;
