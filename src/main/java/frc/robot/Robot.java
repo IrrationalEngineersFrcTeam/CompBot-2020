@@ -44,14 +44,11 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public static NetworkTableEntry ty;
   public static NetworkTableEntry tx;
   public static NetworkTableEntry ta;
-  public static NetworkTableEntry tv;
   public static NetworkTableEntry ledMode;
   public static double VaX;
   public static double VaY;
   public static double VTA;
-  public static double IsSeen;
   public static int ledInt;
-  public static boolean seenToBool;
   public static boolean StartTracking;
   public static visionTrackinCommand AutoVisTrack;
   public static OI oi; // oi must be at the end!!!
@@ -78,7 +75,6 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     tx = LimelightTable.getEntry("tx");
     ty = LimelightTable.getEntry("ty");
     ta = LimelightTable.getEntry("ta");
-    tv = LimelightTable.getEntry("tv");
     ledInt = 0;
     AutoVisTrack = new visionTrackinCommand();
 
@@ -110,7 +106,6 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     VaX = tx.getDouble(0.0);
     VaY = ty.getDouble(0.0);
     VTA = ta.getDouble(0.0);
-    IsSeen = tv.getDouble(0.0);
     StartTracking = oi.visionTracking.get();
 
     seenToBool = (IsSeen == 1) ? true : false;
@@ -118,7 +113,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     SmartDashboard.putNumber("LimelightX", VaX);
     SmartDashboard.putNumber("LimelightY", VaY);
     SmartDashboard.putNumber("LimelightArea", VTA);
-    SmartDashboard.putBoolean("targetFound", seenToBool);
+    
 
   }
 
