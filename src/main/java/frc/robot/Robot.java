@@ -60,6 +60,8 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public static VisionSub visionsub;
   public static PID pid;
   public static double PIDTurn;
+  public static double IsSeen;
+  public static boolean seenToBool;
   public static OI oi; // oi must be at the end!!!
 
   /*
