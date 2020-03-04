@@ -13,6 +13,7 @@ import frc.robot.commands.intakeRollerCommand;
 import frc.robot.commands.indexInCommand;
 import frc.robot.commands.indexOutCommand;
 import frc.robot.commands.shootCommand;
+import frc.robot.commands.climbCommand;
 import frc.robot.commandGroups.ShootPowerCells;
 
 
@@ -33,8 +34,9 @@ public class OI {
   //This is the place where you create buttons
   public Button intakeButton;
   public Button triggerShoot; 
-  public Button IndexRunIn;
-  public Button IndexRunOut; 
+  public Button indexRunIn;
+  public Button indexRunOut; 
+  public Button climbButton;
   public Button visionTracking;
   public Button ShootPowerCells;
   
@@ -48,17 +50,19 @@ public class OI {
     //This is where you initialize the buttons
     intakeButton = new JoystickButton(sticcL, 2);
     triggerShoot = new JoystickButton(sticcL, 1);
-    IndexRunIn = new JoystickButton(sticcR, 2);
-    IndexRunOut = new JoystickButton(sticcR, 8);
+    indexRunIn = new JoystickButton(sticcR, 2);
+    indexRunOut = new JoystickButton(sticcR, 8);
     visionTracking = new JoystickButton(sticcR, 1);
+    climbButton = new JoystickButton(sticcL, 5);//Change to an appropriate button later
 
     ShootPowerCells = new JoystickButton(sticcR, 5);//Change to appropriate button later
 
     //This is where you give the button it's functionality
     intakeButton.whileHeld(new intakeRollerCommand());
     triggerShoot.whileHeld(new shootCommand());
-    IndexRunIn.whileHeld(new indexInCommand());
-    IndexRunOut.whileHeld(new indexOutCommand());
+    indexRunIn.whileHeld(new indexInCommand());
+    indexRunOut.whileHeld(new indexOutCommand());
+    climbButton.whileHeld(new climbCommand());
 
     //Command Groups
     ShootPowerCells.whileHeld(new ShootPowerCells());//We may change the type of trigger this is later, for now this button is for testing
