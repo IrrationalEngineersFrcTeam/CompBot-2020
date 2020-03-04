@@ -19,8 +19,11 @@ import frc.robot.commands.visionTrackinCommand;
 import frc.robot.subsystems.DriveSub; 
 import frc.robot.subsystems.ClimberSub;
 import frc.robot.subsystems.ShooterSub;
+import frc.robot.subsystems.VisionSub;
 import frc.robot.subsystems.ShooterFeederSub;
 import frc.robot.subsystems.IntakeRollerSubsystem;
+import frc.robot.subsystems.PID;
+import frc.robot.commandGroups.ShootPowerCells;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -53,6 +56,10 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public static int ledInt;
   public static boolean StartTracking;
   public static visionTrackinCommand AutoVisTrack;
+  public static ShootPowerCells shootPC; 
+  public static VisionSub visionsub;
+  public static PID pid;
+  public static double PIDTurn;
   public static OI oi; // oi must be at the end!!!
 
   /*
@@ -71,6 +78,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     intakesub = new IntakeRollerSubsystem();
     indexsub = new IndexSub();
     shootersub = new ShooterSub();
+    visionsub = new VisionSub();
     indexLimitSwitch = new DigitalInput(0);
     inst = NetworkTableInstance.getDefault();
     LimelightTable = inst.getTable("limelight");
@@ -79,6 +87,8 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     ta = LimelightTable.getEntry("ta");
     ledInt = 0;
     AutoVisTrack = new visionTrackinCommand();
+    shootPC = new ShootPowerCells();
+    pid = new PID(0.01, 0.01, 0.0);
 
     // oi needs to be at the end!!!!
     oi = new OI();
@@ -109,6 +119,8 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     VaY = ty.getDouble(0.0);
     VTA = ta.getDouble(0.0);
     StartTracking = oi.visionTracking.get();
+
+    PIDTurn = Robot.visionsub.VisionTurn(Robot.VaX);
 
     seenToBool = (IsSeen == 1) ? true : false;
 
@@ -193,7 +205,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
 
-    System.out.println(Robot.drive_sub.CurrentRoboDistance(VaY, 30, 30)/12);
+    System.out.println(Robot.visionsub.CurrentRoboDistance(VaY, 30, 30)/12);
    // System.out.println(Robot.oi.sticcL.getY());
    // System.out.println(Robot.oi.sticcR.getY());
 

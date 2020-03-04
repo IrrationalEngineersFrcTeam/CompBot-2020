@@ -9,6 +9,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+//import frc.robot.commandGroups.ShootPowerCells;
 
 public class visionTrackinCommand extends Command {
   public double TurnSpeed;
@@ -16,6 +17,7 @@ public class visionTrackinCommand extends Command {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(Robot.drive_sub);
+    requires(Robot.visionsub);
   }
 
   // Called just before this Command runs the first time
@@ -31,8 +33,8 @@ public class visionTrackinCommand extends Command {
   protected void execute() 
   {
 
-    double DriveSpeed = Robot.drive_sub.AdjustRoboDistance(96, Robot.drive_sub.CurrentRoboDistance(Robot.VaY, 30, 30));
-    double TurnSpeed = Robot.drive_sub.VisionTurn(Robot.VaX);
+    double DriveSpeed = Robot.visionsub.AdjustRoboDistance(96, Robot.visionsub.CurrentRoboDistance(Robot.VaY, 30, 30));
+    double TurnSpeed = Robot.visionsub.VisionTurn(Robot.VaX);
 
     if(Robot.IsSeen != 1 )
       Robot.drive_sub.TankDrive(.25, -.25);
@@ -57,7 +59,7 @@ public class visionTrackinCommand extends Command {
     // //  double SpeedXL = Robot.oi.sticcL.getX();
     // // double SpeedXR = Robot.oi.sticcR.getX();
 
-    //double TurnVoltageVision = Robot.drive_sub.VisionTurn(Robot.VaX);
+    //double TurnVoltageVision = Robot.visionsub.VisionTurn(Robot.VaX);
       
     // if(Robot.StartTracking == true)
     // {

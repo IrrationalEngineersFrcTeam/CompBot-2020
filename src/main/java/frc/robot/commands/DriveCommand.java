@@ -30,16 +30,22 @@ public class DriveCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+
     //This creates two variables that are equal to the angle of joysticks
     //These will be usefull to the drive subsystem 
-    double SpeedL = Robot.oi.sticcL.getY();
-    double SpeedR = Robot.oi.sticcR.getY();
     // double SpeedXL = Robot.oi.sticcL.getX();
     //double SpeedXR = Robot.oi.sticcR.getX();
+    double SpeedL = Robot.oi.sticcL.getY();
+    double SpeedR = Robot.oi.sticcR.getY();
+
     
-    double TurnSpeed = Robot.drive_sub.VisionTurn(Robot.VaX);
+    //This gets the PIDTurn variable in robot, which is tied to the PID calculations 
+    //and error calculations in PID.java and VisionSub respectivly.
+    double TurnSpeed = Robot.PIDTurn;
+
     //the first number is the targeted distance from the vision target in inches
-    double DriveSpeed = Robot.drive_sub.AdjustRoboDistance(96, Robot.drive_sub.CurrentRoboDistance(Robot.VaY, 30, 30));
+    //double DriveSpeed = Robot.visionsub.AdjustRoboDistance(96, Robot.visionsub.CurrentRoboDistance(Robot.VaY, 30, 30));
+    double DriveSpeed = SpeedR;
 
       
     if(Robot.StartTracking == false)
