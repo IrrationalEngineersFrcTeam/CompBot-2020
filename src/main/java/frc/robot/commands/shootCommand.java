@@ -30,6 +30,7 @@ public class shootCommand extends Command {
   protected void execute() {
 
     Robot.shootersub.shoot();
+    System.out.println("Shooting!");
 
   }
 

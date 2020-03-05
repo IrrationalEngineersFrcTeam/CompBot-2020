@@ -27,6 +27,7 @@ public class climbCommand extends Command {
   protected void execute() {
 
     Robot.climbersub.climb();
+    System.out.println("Climbing!");
 
   }
 
