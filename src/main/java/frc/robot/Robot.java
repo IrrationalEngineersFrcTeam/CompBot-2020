@@ -162,6 +162,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   @Override
   public void autonomousInit() {
 
+    /*
     char autoPositionChar = autoChar(getString("M").charAt(0));//This code is currently not working because no NetworkTables entry for the autoChar string have been made
     switch(autoPositionChar)
     {
@@ -174,6 +175,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
       case 'R': ;//calls the auto command for the right position
       break;
     }
+    */
 
     AutoVisTrack.start();
 
