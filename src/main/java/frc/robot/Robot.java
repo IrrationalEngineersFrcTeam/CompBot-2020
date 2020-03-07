@@ -50,6 +50,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public static NetworkTableEntry tx;
   public static NetworkTableEntry ta;
   public static NetworkTableEntry ledMode;
+  public static NetworkTableEntry autonomousPos;
   public static double VaX;
   public static double VaY;
   public static double VTA;
@@ -87,6 +88,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     tx = LimelightTable.getEntry("tx");
     ty = LimelightTable.getEntry("ty");
     ta = LimelightTable.getEntry("ta");
+    autonomousPos = SmartDashboard.getEntry("autonomousPos");
     ledInt = 0;
     AutoVisTrack = new visionTrackinCommand();
     shootPC = new ShootPowerCells();
@@ -162,8 +164,8 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   @Override
   public void autonomousInit() {
 
-    /*
-    char autoPositionChar = autoChar(getString("M").charAt(0));//This code is currently not working because no NetworkTables entry for the autoChar string have been made
+    
+    char autoPositionChar = autonomousPos.getString("M").charAt(0);//This code is currently not working because no NetworkTables entry for the autoChar string have been made
     switch(autoPositionChar)
     {
       case 'L': ;//calls the auto command for the left position
@@ -175,7 +177,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
       case 'R': ;//calls the auto command for the right position
       break;
     }
-    */
+    
 
     AutoVisTrack.start();
 
