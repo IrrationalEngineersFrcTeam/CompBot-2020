@@ -9,7 +9,7 @@ package frc.robot;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
-
+import edu.wpi.first.wpilibj.PWMSparkMax;
 import edu.wpi.first.wpilibj.Spark;
 
 
@@ -27,7 +27,7 @@ public class RobotMap {
   public CANSparkMax shootCtrl;
   public CANSparkMax shooterFeederControl; //subject to change
   public Spark indexCtrl;
-  public Spark climberCtrl;
+  public PWMSparkMax climberCtrl;
 
   //The drive motors
   public CANSparkMax MotorL1Control;
@@ -66,7 +66,13 @@ public class RobotMap {
 
     //This is where you give the Spark motor controller it's PWM ID and type
     indexCtrl = new Spark(indexMotor);
-    climberCtrl = new Spark(climberMotor);
+
+    //2.003ms = full "forward"
+    // 1.550ms = the "high end" of the deadband range
+    // 1.500ms = center of the deadband range (off)
+    // 1.460ms = the "low end" of the deadband range
+    // 0.999ms = full "reverse"
+    climberCtrl = new PWMSparkMax(climberMotor);
     
     //This is where you give the SparkMax motor controller it's CAN ID and type
     intakeMotorControl = new CANSparkMax(intakeMotor, MotorType.kBrushless);

@@ -181,7 +181,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
 
     
     char autoPositionChar = autonomousPos.getString("M").charAt(0);//This code is currently not working because no NetworkTables entry for the autoChar string have been made
-    char autoPositionChar = autoChar(getString("M").charAt(0));//This code is currently not working because no NetworkTables entry for the autoChar string have been made
+    //char autoPositionChar = autoChar(getString("M").charAt(0));//This code is currently not working because no NetworkTables entry for the autoChar string have been made
     switch(autoPositionChar)
     {
       case 'L': ;//calls the auto command for the left position

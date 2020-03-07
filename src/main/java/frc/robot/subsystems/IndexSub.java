@@ -6,6 +6,9 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.subsystems;
+import java.sql.Time;
+
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.Robot;
 
@@ -55,6 +58,7 @@ public class IndexSub extends Subsystem {
       
       case 1 :
         Robot.robotmap.indexCtrl.set(-.5);
+        Timer.delay(0.1);
 
         break;
 

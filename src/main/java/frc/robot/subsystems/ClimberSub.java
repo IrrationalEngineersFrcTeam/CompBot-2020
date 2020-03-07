@@ -24,6 +24,14 @@ public class ClimberSub extends Subsystem {
   }
 
   public void climb(){
-    Robot.robotmap.climberCtrl.set(0.8);
+
+    // 2.003ms = full "forward"
+    // 1.550ms = the "high end" of the deadband range
+    // 1.500ms = center of the deadband range (off)
+    // 1.460ms = the "low end" of the deadband range
+    // 0.999ms = full "reverse"
+    // 1.752 is half speed
+    Robot.robotmap.climberCtrl.set(1.752);
+
   }
 }
