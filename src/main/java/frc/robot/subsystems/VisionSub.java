@@ -31,13 +31,13 @@ public class VisionSub extends Subsystem {
     public double VisionTurn(double AngleX)
     {
       
-      if(Math.abs(AngleX)<=2)
+      if(Math.abs(AngleX)<=0.2)
       {
       return 0;
       }
       else
       {
-      return -Robot.pid.CalculateSpeed(AngleX);
+      return -Robot.pid1.CalculateSpeed(AngleX);
       }
   
     }
@@ -51,8 +51,8 @@ public class VisionSub extends Subsystem {
       double VisRadiansY = Math.toRadians(VisionDegreesY);
       double MountRadiansY = Math.toRadians(MountingDegreesY);
   
-      //The 98.25 is the hieght of the visiontarget in inches
-      double Hight = 98.25 - MountingHight;
+      //The 98.25 is the hieght of the visiontarget in inches is 98.25
+      double Hight = 98 - MountingHight;
       double TangentAngle = Math.tan(VisRadiansY + MountRadiansY);
   
       double CurrentDistance = Hight/TangentAngle;
@@ -66,8 +66,15 @@ public class VisionSub extends Subsystem {
   
       double DeltaX = TargetDist - CurrentDist;
   
-      return DeltaX * -0.01;
-  
+      if(Math.abs(DeltaX) <= 6)
+      {
+      return 0;
+      }
+      else
+      {
+      return -Robot.pid2.CalculateSpeed(DeltaX);
+      }
+
     }
   
 

@@ -65,8 +65,10 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public static visionTrackinCommand AutoVisTrack;
   public static ShootPowerCells shootPC; 
   public static VisionSub visionsub;
-  public static PID pid;
+  public static PID pid1;
+  public static PID pid2;
   public static double PIDTurn;
+  public static double PIDSpeed;
   public static double IsSeen;
   public static boolean seenToBool;
   public static boolean StartShooting;
@@ -103,7 +105,8 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     ledInt = 0;
     AutoVisTrack = new visionTrackinCommand();
     shootPC = new ShootPowerCells();
-    pid = new PID(0.01, 0.01, 0.0);
+    pid1 = new PID(0.01, 0.0, 0.0);
+    pid2 = new PID(0.01, 0.0, 0.0);
 
     // oi needs to be at the end!!!!
     oi = new OI();
@@ -140,6 +143,8 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
 
 
     PIDTurn = Robot.visionsub.VisionTurn(Robot.VaX);
+    //the first double is the distance you want to be from the vision target
+    PIDSpeed = Robot.visionsub.AdjustRoboDistance(204, Robot.visionsub.CurrentRoboDistance(VaY, 0.0, 0.0));
 
     seenToBool = (IsSeen == 1) ? true : false;
 
