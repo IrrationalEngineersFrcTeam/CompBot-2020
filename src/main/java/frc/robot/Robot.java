@@ -145,6 +145,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     PIDTurn = Robot.visionsub.VisionTurn(Robot.VaX);
     //the first double is the distance you want to be from the vision target
     PIDSpeed = Robot.visionsub.AdjustRoboDistance(180, Robot.visionsub.CurrentRoboDistance(VaY, 2.0, 0.0));
+    System.out.println(Robot.visionsub.AdjustRoboDistance(180, Robot.visionsub.CurrentRoboDistance(VaY, 2.0, 0.0))/12);
 
     seenToBool = (IsSeen == 1) ? true : false;
 
