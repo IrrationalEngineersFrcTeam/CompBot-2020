@@ -20,6 +20,7 @@ public class DriveCommand extends Command {
   public DriveCommand() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.drive_sub);
+    requires(Robot.visionsub);
   }
 
   // Called just before this Command runs the first time
@@ -47,14 +48,14 @@ public class DriveCommand extends Command {
     //double DriveSpeed = Robot.visionsub.AdjustRoboDistance(96, Robot.visionsub.CurrentRoboDistance(Robot.VaY, 30, 30));
     double DriveSpeed;
     
-    if(Robot.oi.indexRunIn.get())
-    {
-      DriveSpeed = Robot.PIDSpeed;
-    }
-    else
-    {
+    // if(Robot.oi.indexRunIn.get())
+    // {
+    //   DriveSpeed = Robot.PIDSpeed;
+    // }
+    // else
+    // {
       DriveSpeed = SpeedR;
-    }
+    //}
 
       
     if(Robot.StartTracking == false)
@@ -65,8 +66,8 @@ public class DriveCommand extends Command {
     else
     {
       // Robot.ledMode.setNumber(3);
-      Robot.LimelightTable.getEntry("ledMode").setNumber(0);
-      Robot.ledMode.setNumber(3);
+      //Robot.LimelightTable.getEntry("ledMode").setNumber(0);
+      //Robot.ledMode.setNumber(3);
       Robot.drive_sub.ArcadeDrive(DriveSpeed, TurnSpeed);
     }
 

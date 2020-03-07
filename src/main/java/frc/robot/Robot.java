@@ -91,10 +91,11 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     indexsub = new IndexSub();
     shootersub = new ShooterSub();
     visionsub = new VisionSub();
+    shooterfeedersub = new ShooterFeederSub();
+    climbersub = new ClimberSub();
     indexInitialLimitSwitch = new DigitalInput(0);
     indexEndingLimitSwitch = new DigitalInput(1);
     automoveforward = new AutoMoveForward();//CommandGroups
-    indexLimitSwitch = new DigitalInput(0);
     inst = NetworkTableInstance.getDefault();
     LimelightTable = inst.getTable("limelight");
     tx = LimelightTable.getEntry("tx");
@@ -144,8 +145,8 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
 
     PIDTurn = Robot.visionsub.VisionTurn(Robot.VaX);
     //the first double is the distance you want to be from the vision target
-    PIDSpeed = Robot.visionsub.AdjustRoboDistance(180, Robot.visionsub.CurrentRoboDistance(VaY, 2.0, 0.0));
-    System.out.println(Robot.visionsub.AdjustRoboDistance(180, Robot.visionsub.CurrentRoboDistance(VaY, 2.0, 0.0))/12);
+    PIDSpeed = Robot.visionsub.AdjustRoboDistance(180, Robot.visionsub.CurrentRoboDistance(VaY, 2.0, 23.75));
+    System.out.println(Robot.visionsub.AdjustRoboDistance(180, Robot.visionsub.CurrentRoboDistance(VaY, 2.0, 23.75))/12);
 
     seenToBool = (IsSeen == 1) ? true : false;
 
@@ -186,19 +187,19 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public void autonomousInit() {
 
     
-    char autoPositionChar = autonomousPos.getString("M").charAt(0);//This code is currently not working because no NetworkTables entry for the autoChar string have been made
+    // char autoPositionChar = autonomousPos.getString("M").charAt(0);//This code is currently not working because no NetworkTables entry for the autoChar string have been made
     //char autoPositionChar = autoChar(getString("M").charAt(0));//This code is currently not working because no NetworkTables entry for the autoChar string have been made
-    switch(autoPositionChar)
-    {
-      case 'L': ;//calls the auto command for the left position
-      break;
+    // switch(autoPositionChar)
+    // {
+    //   case 'L': ;//calls the auto command for the left position
+    //   break;
 
-      case 'M': ;//calls the auto command for the middle position
-      break;
+    //   case 'M': ;//calls the auto command for the middle position
+    //   break;
 
-      case 'R': ;//calls the auto command for the right position
-      break;
-    }
+    //   case 'R': ;//calls the auto command for the right position
+    //   break;
+    // }
     
 
     // AutoVisTrack.start();

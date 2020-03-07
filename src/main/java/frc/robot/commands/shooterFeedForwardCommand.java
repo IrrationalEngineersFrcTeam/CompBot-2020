@@ -14,6 +14,7 @@ public class shooterFeedForwardCommand extends Command {
   public shooterFeedForwardCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
+    requires(Robot.shooterfeedersub);
   }
 
   // Called just before this Command runs the first time
