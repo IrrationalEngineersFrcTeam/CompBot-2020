@@ -20,6 +20,10 @@ public class IndexSub extends Subsystem {
     
   }
 
+  private boolean IndexTriggered = Robot.indexInitLST;
+  private boolean IndexEnded = Robot.indexEndLST;
+  private int IndexCase;
+
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
@@ -27,8 +31,22 @@ public class IndexSub extends Subsystem {
   }
 
   public void index() {
-    
-    if(Robot.indexLST)
+
+    //Neither limit switch is triggered
+    if(IndexTriggered == false && IndexEnded == false)
+    IndexCase = 0;
+    //Only the initial limit switch is triggered
+    else if(IndexTriggered == true && IndexEnded == false)
+    IndexCase = 1;
+    //Only the ending limit switch is triggered
+    else if(IndexTriggered == false && IndexEnded == true)
+    IndexCase = 2;
+    //Both limit switches are triggered
+    else
+    IndexCase = 3;
+
+
+    if(Robot.indexInitLST)
     {
     Robot.robotmap.indexCtrl.set(.5);
     }

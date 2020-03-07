@@ -41,9 +41,11 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public static ShooterFeederSub shooterfeedersub;
   public static IndexSub indexsub;
   public static IntakeRollerSubsystem intakesub;
-  public static DigitalInput indexLimitSwitch;
+  public static DigitalInput indexInitialLimitSwitch;
+  public static DigitalInput indexEndingLimitSwitch;
   public static RobotMap robotmap;
-  public static boolean indexLST;
+  public static boolean indexInitLST;
+  public static boolean indexEndLST;
   public static NetworkTableInstance inst;
   public static NetworkTable LimelightTable;
   public static NetworkTableEntry ty;
@@ -82,7 +84,8 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     indexsub = new IndexSub();
     shootersub = new ShooterSub();
     visionsub = new VisionSub();
-    indexLimitSwitch = new DigitalInput(0);
+    indexInitialLimitSwitch = new DigitalInput(0);
+    indexEndingLimitSwitch = new DigitalInput(1);
     inst = NetworkTableInstance.getDefault();
     LimelightTable = inst.getTable("limelight");
     tx = LimelightTable.getEntry("tx");
@@ -91,7 +94,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     autonomousPos = SmartDashboard.getEntry("autonomousPos");
     ledInt = 0;
     AutoVisTrack = new visionTrackinCommand();
-    shootPC = new ShootPowerCells();
+    //shootPC = new ShootPowerCells();
     pid = new PID(0.01, 0.01, 0.0);
 
     // oi needs to be at the end!!!!
@@ -116,7 +119,9 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   @Override
   public void robotPeriodic() {
 
-    indexLST = indexLimitSwitch.get();
+    indexInitLST = indexInitialLimitSwitch.get();
+    indexEndLST = indexEndingLimitSwitch.get();
+    System.out.println(indexInitLST);
 
     //Default Red Blue balances of the limelight are 1200 and 1975 respectivly
     VaX = tx.getDouble(0.0);
@@ -164,22 +169,36 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   @Override
   public void autonomousInit() {
 
+<<<<<<< HEAD
     
     char autoPositionChar = autonomousPos.getString("M").charAt(0);//This code is currently not working because no NetworkTables entry for the autoChar string have been made
     switch(autoPositionChar)
     {
       case 'L': ;//calls the auto command for the left position
       break;
+=======
+    // char autoPositionChar = autoChar(getString("M").charAt(0));//This code is currently not working because no NetworkTables entry for the autoChar string have been made
+    // switch(autoPositionChar)
+    // {
+    //   case 'L': ;//calls the auto command for the left position
+    //   break;
+>>>>>>> I did some stuff with limit switches
 
-      case 'M': ;//calls the auto command for the middle position
-      break;
+    //   case 'M': ;//calls the auto command for the middle position
+    //   break;
 
+<<<<<<< HEAD
       case 'R': ;//calls the auto command for the right position
       break;
     }
     
+=======
+    //   case 'R': ;//calls the auto command for the right position
+    //   break;
+    // }
+>>>>>>> I did some stuff with limit switches
 
-    AutoVisTrack.start();
+    // AutoVisTrack.start();
 
     // m_autonomousCommand = m_chooser.getSelected();
 
