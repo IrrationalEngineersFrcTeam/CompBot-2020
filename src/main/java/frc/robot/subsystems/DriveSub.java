@@ -36,10 +36,10 @@ public class DriveSub extends Subsystem {
     //proper motor controllers to set the motors to desired speed.
     double PercentSpeed = 0.7;
 
-    Robot.robotmap.MotorL1Control.set(-SpeedL * 0.7);
-		Robot.robotmap.MotorL2Control.set(-SpeedL * 0.7);
-		Robot.robotmap.MotorR1Control.set(SpeedR * 0.7);
-    Robot.robotmap.MotorR2Control.set(SpeedR * 0.7); 
+    Robot.robotmap.MotorL1Control.set(-SpeedL * PercentSpeed);
+		Robot.robotmap.MotorL2Control.set(-SpeedL * PercentSpeed);
+		Robot.robotmap.MotorR1Control.set(SpeedR * PercentSpeed);
+    Robot.robotmap.MotorR2Control.set(SpeedR * PercentSpeed); 
     
   }
 
