@@ -9,7 +9,7 @@ package frc.robot.commandGroups;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.Robot;
-import frc.robot.autoCommands.autoDriveForward;
+import frc.robot.autoCommands.autoDriveForwardCommand;
 
 public class AutoMoveForward extends CommandGroup {
   /**
@@ -22,7 +22,7 @@ public class AutoMoveForward extends CommandGroup {
     // e.g. addSequential(new Command1());
     // addSequential(new Command2());
     // these will run in order.
-    addSequential(new autoDriveForward(), 1);
+    addSequential(new autoDriveForwardCommand(), 1);
 
     /* To run multiple commands at the same time,
     // use addParallel()

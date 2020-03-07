@@ -10,8 +10,8 @@ package frc.robot.autoCommands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class autoDriveForward extends Command {
-  public autoDriveForward() {
+public class autoDriveForwardCommand extends Command {
+  public autoDriveForwardCommand() {
     requires(Robot.drive_sub);
   }
 
