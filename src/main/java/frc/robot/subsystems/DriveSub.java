@@ -64,6 +64,7 @@ public class DriveSub extends Subsystem {
 		Robot.robotmap.MotorL2Control.set(-LeftSide * 0.4);
 		Robot.robotmap.MotorR1Control.set(RightSide * 0.4);
     Robot.robotmap.MotorR2Control.set(RightSide * 0.4);
+    System.out.println("Arcade drive is activated");
 
   }
 

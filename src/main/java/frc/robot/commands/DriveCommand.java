@@ -20,6 +20,7 @@ public class DriveCommand extends Command {
   public DriveCommand() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.drive_sub);
+    requires(Robot.visionsub);
   }
 
   // Called just before this Command runs the first time
