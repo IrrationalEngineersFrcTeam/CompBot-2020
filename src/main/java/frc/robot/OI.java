@@ -60,7 +60,7 @@ public class OI {
     //This is where you give the button it's functionality
     intakeButton.whileHeld(new intakeRollerCommand());
     triggerShoot.whileHeld(new shootCommand());
-    indexRunIn.whileHeld(new indexInCommand());
+    //indexRunIn.whileHeld(new indexInCommand());
     indexRunOut.whileHeld(new indexOutCommand());
     climbButton.whileHeld(new climbCommand());
 

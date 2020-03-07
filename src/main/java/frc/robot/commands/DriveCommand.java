@@ -45,7 +45,16 @@ public class DriveCommand extends Command {
 
     //the first number is the targeted distance from the vision target in inches
     //double DriveSpeed = Robot.visionsub.AdjustRoboDistance(96, Robot.visionsub.CurrentRoboDistance(Robot.VaY, 30, 30));
-    double DriveSpeed = SpeedR;
+    double DriveSpeed;
+    
+    if(Robot.oi.indexRunIn.get())
+    {
+      DriveSpeed = Robot.PIDSpeed;
+    }
+    else
+    {
+      DriveSpeed = SpeedR;
+    }
 
       
     if(Robot.StartTracking == false)
