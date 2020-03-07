@@ -20,7 +20,6 @@ public class DriveCommand extends Command {
   public DriveCommand() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.drive_sub);
-    requires(Robot.visionsub);
   }
 
   // Called just before this Command runs the first time
@@ -45,17 +44,8 @@ public class DriveCommand extends Command {
     double TurnSpeed = Robot.PIDTurn;
 
     //the first number is the targeted distance from the vision target in inches
-    //double DriveSpeed = Robot.visionsub.AdjustRoboDistance(96, Robot.visionsub.CurrentRoboDistance(Robot.VaY, 30, 30));
-    double DriveSpeed;
-    
-    // if(Robot.oi.indexRunIn.get())
-    // {
-    //   DriveSpeed = Robot.PIDSpeed;
-    // }
-    // else
-    // {
-      DriveSpeed = SpeedR;
-    //}
+    //double DriveSpeed = Robot.visionsub.AdjustRoboDistance(96, Robot.visionsub.CurrentRoboDistance(Robot.VaY, 30, 30));    
+    double DriveSpeed = SpeedR;
 
       
     if(Robot.StartTracking == false)
