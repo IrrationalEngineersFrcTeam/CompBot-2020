@@ -24,6 +24,7 @@ import frc.robot.subsystems.ShooterFeederSub;
 import frc.robot.subsystems.IntakeRollerSubsystem;
 import frc.robot.subsystems.PID;
 import frc.robot.commandGroups.ShootPowerCells;
+import frc.robot.commandGroups.AutoMoveForward;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -43,6 +44,8 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public static IntakeRollerSubsystem intakesub;
   public static DigitalInput indexInitialLimitSwitch;
   public static DigitalInput indexEndingLimitSwitch;
+  public static AutoMoveForward automoveforward;//commandgroups
+  public static DigitalInput indexLimitSwitch;
   public static RobotMap robotmap;
   public static boolean indexInitLST;
   public static boolean indexEndLST;
@@ -86,6 +89,8 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     visionsub = new VisionSub();
     indexInitialLimitSwitch = new DigitalInput(0);
     indexEndingLimitSwitch = new DigitalInput(1);
+    automoveforward = new AutoMoveForward();//CommandGroups
+    indexLimitSwitch = new DigitalInput(0);
     inst = NetworkTableInstance.getDefault();
     LimelightTable = inst.getTable("limelight");
     tx = LimelightTable.getEntry("tx");
@@ -94,7 +99,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     autonomousPos = SmartDashboard.getEntry("autonomousPos");
     ledInt = 0;
     AutoVisTrack = new visionTrackinCommand();
-    //shootPC = new ShootPowerCells();
+    shootPC = new ShootPowerCells();
     pid = new PID(0.01, 0.01, 0.0);
 
     // oi needs to be at the end!!!!
