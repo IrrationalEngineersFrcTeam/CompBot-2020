@@ -6,15 +6,16 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
-
-import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class climbCommand extends Command {
-  public climbCommand() {
+import edu.wpi.first.wpilibj.command.Command;
+
+public class climbDownCommand extends Command {
+  public climbDownCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(Robot.climbersub);
+
   }
 
   // Called just before this Command runs the first time
@@ -25,10 +26,6 @@ public class climbCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-
-    Robot.climbersub.climb();
-    //System.out.println("Climbing!");
-
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -40,13 +37,11 @@ public class climbCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.robotmap.climberCtrl.set(0);
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    Robot.robotmap.climberCtrl.set(0);
   }
 }

@@ -13,7 +13,8 @@ import frc.robot.commands.intakeRollerCommand;
 import frc.robot.commands.indexInCommand;
 import frc.robot.commands.indexOutCommand;
 import frc.robot.commands.shootCommand;
-import frc.robot.commands.climbCommand;
+import frc.robot.commands.climbUpCommand;
+import frc.robot.commands.climbDownCommand;
 import frc.robot.commandGroups.ShootPowerCells;
 
 
@@ -37,6 +38,7 @@ public class OI {
   public Button indexRunIn;
   public Button indexRunOut; 
   public Button climbButton;
+  public Button climbDownButton;
   public Button visionTracking;
   public Button ShootPowerCells;
   
@@ -54,6 +56,7 @@ public class OI {
     indexRunOut = new JoystickButton(sticcR, 8);
     visionTracking = new JoystickButton(sticcR, 1);
     climbButton = new JoystickButton(sticcL, 5);//Change to an appropriate button later
+    climbDownButton = new JoystickButton(sticcL, 10);
 
     ShootPowerCells = new JoystickButton(sticcR, 5);//Change to appropriate button later
 
@@ -62,7 +65,8 @@ public class OI {
     triggerShoot.whileHeld(new shootCommand());
     indexRunIn.whileHeld(new indexInCommand());
     indexRunOut.whileHeld(new indexOutCommand());
-    climbButton.whileHeld(new climbCommand());
+    climbButton.whileHeld(new climbUpCommand());
+    climbDownButton.whileHeld(new climbDownCommand());
 
     //Command Groups
     ShootPowerCells.whileHeld(new ShootPowerCells());//We may change the type of trigger this is later, for now this button is for testing

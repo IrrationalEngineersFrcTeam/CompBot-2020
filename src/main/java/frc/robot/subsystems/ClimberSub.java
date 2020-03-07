@@ -34,4 +34,10 @@ public class ClimberSub extends Subsystem {
     Robot.robotmap.climberCtrl.set(1.752);
 
   }
+
+  public void climbDown(){
+
+    Robot.robotmap.climberCtrl.set(1.248);
+    
+  }
 }
