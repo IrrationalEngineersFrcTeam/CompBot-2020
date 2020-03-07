@@ -68,6 +68,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public static double PIDTurn;
   public static double IsSeen;
   public static boolean seenToBool;
+  public static boolean StartShooting;
   public static OI oi; // oi must be at the end!!!
 
   /*
@@ -133,6 +134,8 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     VaY = ty.getDouble(0.0);
     VTA = ta.getDouble(0.0);
     StartTracking = oi.visionTracking.get();
+    StartShooting = oi.ShootPowerCells.get();
+
 
     PIDTurn = Robot.visionsub.VisionTurn(Robot.VaX);
 
@@ -176,9 +179,13 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
 
     
     char autoPositionChar = autonomousPos.getString("M").charAt(0);//This code is currently not working because no NetworkTables entry for the autoChar string have been made
+    char autoPositionChar = autoChar(getString("M").charAt(0));//This code is currently not working because no NetworkTables entry for the autoChar string have been made
     switch(autoPositionChar)
     {
       case 'L': ;//calls the auto command for the left position
+      break;
+
+      case 'M': ;//calls the auto command for the middle position
       break;
 
       case 'R': ;//calls the auto command for the right position

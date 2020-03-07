@@ -45,14 +45,29 @@ public class IndexSub extends Subsystem {
     else
     IndexCase = 3;
 
+    switch(IndexCase)
+    {
 
-    if(Robot.indexInitLST)
-    {
-    Robot.robotmap.indexCtrl.set(.5);
-    }
-    else
-    {
-    Robot.robotmap.indexCtrl.set(0);
+      case 0 :
+        Robot.robotmap.indexCtrl.set(0);
+      
+        break;
+      
+      case 1 :
+        Robot.robotmap.indexCtrl.set(-.5);
+
+        break;
+
+      case 2 :
+        Robot.robotmap.indexCtrl.set(0);
+
+        break;
+
+      case 3 :
+        Robot.robotmap.indexCtrl.set(0);
+
+        break;
+
     }
 
   }
