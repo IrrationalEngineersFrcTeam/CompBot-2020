@@ -56,6 +56,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public static NetworkTableEntry ta;
   public static NetworkTableEntry ledMode;
   public static NetworkTableEntry autonomousPos;
+  public static NetworkTableEntry teleOpInit;
   public static double VaX;
   public static double VaY;
   public static double VTA;
@@ -98,6 +99,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     ty = LimelightTable.getEntry("ty");
     ta = LimelightTable.getEntry("ta");
     autonomousPos = SmartDashboard.getEntry("autonomousPos");
+    teleOpInit = SmartDashboard.getEntry("teleOpInit");
     ledInt = 0;
     AutoVisTrack = new visionTrackinCommand();
     shootPC = new ShootPowerCells();
@@ -228,6 +230,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
   public void teleopInit() {
 
     AutoVisTrack.cancel();
+    teleOpInit.setValue(2);
    
   }
 
