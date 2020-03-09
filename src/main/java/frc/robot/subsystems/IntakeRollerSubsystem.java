@@ -29,7 +29,7 @@ public class IntakeRollerSubsystem extends Subsystem {
 
   public void intake() {
 
-    Robot.robotmap.intakeMotorControl.set(-.25);
+    Robot.robotmap.intakeMotorControl.set(-.15);
 
   }
 }

@@ -31,7 +31,7 @@ public class indexInCommand extends Command {
 
     if(Robot.StartShooting)
     {
-      Robot.indexsub.indexRun(-.8);
+      Robot.indexsub.indexRun(-.25);
     }
     else
     {
