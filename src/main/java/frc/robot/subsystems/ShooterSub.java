@@ -30,7 +30,8 @@ public class ShooterSub extends Subsystem {
     //set to %50 for testing purposes only, remember to put it up again
     public void shoot() {
 
-        Robot.robotmap.shootCtrl.set(-1);
+        Robot.robotmap.shootCtrl0.set(-1);
+        Robot.robotmap.shootCtrl1.set(-1);
 
     }
 }

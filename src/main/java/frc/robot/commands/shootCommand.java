@@ -43,13 +43,15 @@ public class shootCommand extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
-        Robot.robotmap.shootCtrl.set(0);
+        Robot.robotmap.shootCtrl0.set(0);
+        Robot.robotmap.shootCtrl1.set(0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
-        Robot.robotmap.shootCtrl.set(0);
+        Robot.robotmap.shootCtrl0.set(0);
+        Robot.robotmap.shootCtrl1.set(0);
     }
 }

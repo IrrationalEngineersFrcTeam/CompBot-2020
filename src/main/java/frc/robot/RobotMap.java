@@ -24,7 +24,8 @@ public class RobotMap {
     //This is where you create the motor ID, for CAN or PWM
     public static int intakeMotor;
     public static int indexMotor;
-    public static int shootMotor; //<--- fun to say
+    public static int shootMotor0; //<--- fun to say
+    public static int shootMotor1; //<--- fun to say
     public static int shooterFeederMotor;
     public static int climberMotor;
     public static int MotorL1;
@@ -33,7 +34,8 @@ public class RobotMap {
     public static int MotorR2;
     //This is where you create the motor controller, or anything else that needs to be made for robotmap
     public CANSparkMax intakeMotorControl;
-    public CANSparkMax shootCtrl;
+    public CANSparkMax shootCtrl0;
+    public CANSparkMax shootCtrl1;
     public CANSparkMax shooterFeederControl; //subject to change
     public Spark indexCtrl;
     public PWMSparkMax climberCtrl;
@@ -52,7 +54,8 @@ public class RobotMap {
         climberMotor = 1;
 
         intakeMotor = 3;
-        shootMotor = 1;
+        shootMotor0 = 1;
+        shootMotor1 = 8; //added late!
         shooterFeederMotor = 4;
 
         MotorR1 = 5;
@@ -72,7 +75,8 @@ public class RobotMap {
 
         //This is where you give the SparkMax motor controller it's CAN ID and type
         intakeMotorControl = new CANSparkMax(intakeMotor, MotorType.kBrushless);
-        shootCtrl = new CANSparkMax(shootMotor, MotorType.kBrushless);
+        shootCtrl0 = new CANSparkMax(shootMotor0, MotorType.kBrushless);
+        shootCtrl1 = new CANSparkMax(shootMotor1, MotorType.kBrushless);
         shooterFeederControl = new CANSparkMax(shooterFeederMotor, MotorType.kBrushless);
 
         MotorL1Control = new CANSparkMax(MotorL1, MotorType.kBrushless);
