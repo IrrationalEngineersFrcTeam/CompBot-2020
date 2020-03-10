@@ -27,7 +27,7 @@ public class shooterFeedForwardCommand extends Command {
     protected void execute() {
 
         Robot.shooterfeedersub.shooterFeeder(.5);
-        System.out.println("Feeding Power Cells Forward!");
+        //System.out.println("Feeding Power Cells Forward!");
 
     }
 

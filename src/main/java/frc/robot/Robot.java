@@ -126,7 +126,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
 
         indexInitLST = indexInitialLimitSwitch.get();
         indexEndLST = indexEndingLimitSwitch.get();
-        System.out.println(indexInitLST);
+        //System.out.println(indexInitLST);
 
         //Default Red Blue balances of the limelight are 1200 and 1975 respectivly
         VaX = tx.getDouble(0.0);
@@ -139,7 +139,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
         PIDTurn = Robot.visionsub.VisionTurn(Robot.VaX);
         //the first double is the distance you want to be from the vision target
         PIDSpeed = Robot.visionsub.AdjustRoboDistance(180, Robot.visionsub.CurrentRoboDistance(VaY, 2.0, 23.75));
-        System.out.println(Robot.visionsub.AdjustRoboDistance(180, Robot.visionsub.CurrentRoboDistance(VaY, 2.0, 23.75)) / 12);
+        //System.out.println(Robot.visionsub.AdjustRoboDistance(180, Robot.visionsub.CurrentRoboDistance(VaY, 2.0, 23.75)) / 12);
 
         seenToBool = IsSeen == 1;
 
