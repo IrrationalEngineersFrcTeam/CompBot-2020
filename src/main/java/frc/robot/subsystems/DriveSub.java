@@ -40,10 +40,7 @@ public class DriveSub extends Subsystem {
         Robot.robotmap.MotorL2Control.set(-SpeedL * PercentSpeed);
         Robot.robotmap.MotorR1Control.set(SpeedR * PercentSpeed);
         Robot.robotmap.MotorR2Control.set(SpeedR * PercentSpeed);
-        System.out.println(Robot.robotmap.MotorL1Control.getBusVoltage());
-        System.out.println(Robot.robotmap.MotorL2Control.getBusVoltage());
-        System.out.println(Robot.robotmap.MotorR2Control.getBusVoltage());
-        System.out.println(Robot.robotmap.MotorR1Control.getBusVoltage());
+        System.out.println("Motor L1 : "+Robot.robotmap.MotorL1Control.getBusVoltage() +"   Motor L2 : "+Robot.robotmap.MotorL2Control.getBusVoltage()+"   Motor L2 : "+Robot.robotmap.MotorL2Control.getBusVoltage()+"   Motor R1 : "+Robot.robotmap.MotorR2Control.getBusVoltage()+"   Motor R2 : "+Robot.robotmap.MotorR1Control.getBusVoltage());
 
     }
 
