@@ -14,22 +14,22 @@ import frc.robot.Robot;
  * An example subsystem.  You can replace me with your own Subsystem.
  */
 public class IntakeRollerSubsystem extends Subsystem {
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
+  // Put methods for controlling this subsystem
+  // here. Call these from Commands.
 
-    public IntakeRollerSubsystem() {
+  public IntakeRollerSubsystem() {
+    
+  }
 
-    }
+  @Override
+  public void initDefaultCommand() {
+    // Set the default command for a subsystem here.
+    // setDefaultCommand(new MySpecialCommand());
+  }
 
-    @Override
-    public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        // setDefaultCommand(new MySpecialCommand());
-    }
+  public void intake() {
 
-    public void intake() {
+    Robot.robotmap.intakeMotorControl.set(-.15);
 
-        Robot.robotmap.intakeMotorControl.set(-.25);
-
-    }
+  }
 }
