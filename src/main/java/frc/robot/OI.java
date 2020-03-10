@@ -6,20 +6,12 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.intakeRollerCommand;
-import frc.robot.commands.indexInCommand;
-import frc.robot.commands.indexOutCommand;
-import frc.robot.commands.shootCommand;
-import frc.robot.commands.climbUpCommand;
-import frc.robot.commands.climbDownCommand;
 import frc.robot.commandGroups.ShootPowerCells;
-
-
-
-
+import frc.robot.commands.*;
 
 
 /**
@@ -28,51 +20,51 @@ import frc.robot.commandGroups.ShootPowerCells;
  */
 public class OI {
 
-  //This is the place where you create joysticks
-  public Joystick sticcL;
-  public Joystick sticcR;
+    //This is the place where you create joysticks
+    public Joystick sticcL;
+    public Joystick sticcR;
 
-  //This is the place where you create buttons
-  public Button intakeButton;
-  public Button triggerShoot; 
-  public Button indexRunIn;
-  public Button indexRunOut; 
-  public Button climbButton;
-  public Button climbDownButton;
-  public Button visionTracking;
-  public Button ShootPowerCells;
-  
-
-  public OI() {
-
-    //This is where you initialize the joysticks
-    sticcL = new Joystick(0);
-    sticcR = new Joystick(1);
-
-    //This is where you initialize the buttons
-    intakeButton = new JoystickButton(sticcL, 2);
-    triggerShoot = new JoystickButton(sticcL, 1);
-    indexRunIn = new JoystickButton(sticcR, 2);
-    indexRunOut = new JoystickButton(sticcR, 8);
-    visionTracking = new JoystickButton(sticcR, 1);
-    climbButton = new JoystickButton(sticcL, 5);//Change to an appropriate button later
-    climbDownButton = new JoystickButton(sticcL, 10);
-
-    ShootPowerCells = new JoystickButton(sticcR, 5);//Change to appropriate button later
-
-    //This is where you give the button it's functionality
-    intakeButton.whileHeld(new intakeRollerCommand());
-    triggerShoot.whileHeld(new shootCommand());
-    indexRunIn.whileHeld(new indexInCommand());
-    indexRunOut.whileHeld(new indexOutCommand());
-    climbButton.whileHeld(new climbUpCommand());
-    climbDownButton.whileHeld(new climbDownCommand());
-
-    //Command Groups
-    ShootPowerCells.whileHeld(new ShootPowerCells());//We may change the type of trigger this is later, for now this button is for testing
+    //This is the place where you create buttons
+    public Button intakeButton;
+    public Button triggerShoot;
+    public Button indexRunIn;
+    public Button indexRunOut;
+    public Button climbButton;
+    public Button climbDownButton;
+    public Button visionTracking;
+    public Button ShootPowerCells;
 
 
-  }
+    public OI() {
+
+        //This is where you initialize the joysticks
+        sticcL = new Joystick(0);
+        sticcR = new Joystick(1);
+
+        //This is where you initialize the buttons
+        intakeButton = new JoystickButton(sticcL, 2);
+        triggerShoot = new JoystickButton(sticcL, 1);
+        indexRunIn = new JoystickButton(sticcR, 2);
+        indexRunOut = new JoystickButton(sticcR, 8);
+        visionTracking = new JoystickButton(sticcR, 1);
+        climbButton = new JoystickButton(sticcL, 5);//Change to an appropriate button later
+        climbDownButton = new JoystickButton(sticcL, 10);
+
+        ShootPowerCells = new JoystickButton(sticcR, 5);//Change to appropriate button later
+
+        //This is where you give the button it's functionality
+        intakeButton.whileHeld(new intakeRollerCommand());
+        triggerShoot.whileHeld(new shootCommand());
+        indexRunIn.whileHeld(new indexInCommand());
+        indexRunOut.whileHeld(new indexOutCommand());
+        climbButton.whileHeld(new climbUpCommand());
+        climbDownButton.whileHeld(new climbDownCommand());
+
+        //Command Groups
+        ShootPowerCells.whileHeld(new ShootPowerCells());//We may change the type of trigger this is later, for now this button is for testing
+
+
+    }
 
   
   /*CREATING BUTTONS

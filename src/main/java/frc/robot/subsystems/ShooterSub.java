@@ -14,23 +14,23 @@ import frc.robot.Robot;
  * An example subsystem.  You can replace me with your own Subsystem.
  */
 public class ShooterSub extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
+    // Put methods for controlling this subsystem
+    // here. Call these from Commands.
 
-  public ShooterSub() {
-    
-  }
+    public ShooterSub() {
 
-  @Override
-  public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
-  }
+    }
 
-  //set to %50 for testing purposes only, remember to put it up again
-  public void shoot() {
+    @Override
+    public void initDefaultCommand() {
+        // Set the default command for a subsystem here.
+        // setDefaultCommand(new MySpecialCommand());
+    }
 
-    Robot.robotmap.shootCtrl.set(-1);
+    //set to %50 for testing purposes only, remember to put it up again
+    public void shoot() {
 
-  }
+        Robot.robotmap.shootCtrl.set(-1);
+
+    }
 }

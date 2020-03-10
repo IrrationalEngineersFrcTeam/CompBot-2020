@@ -12,17 +12,17 @@ import frc.robot.Robot;
 import frc.robot.autoCommands.autoDriveForwardCommand;
 
 public class AutoMoveForward extends CommandGroup {
-  /**
-   * Add your docs here.
-   */
-  public AutoMoveForward() {
+    /**
+     * Add your docs here.
+     */
+    public AutoMoveForward() {
 
-    requires(Robot.drive_sub);
-    // Add Commands here:
-    // e.g. addSequential(new Command1());
-    // addSequential(new Command2());
-    // these will run in order.
-    addSequential(new autoDriveForwardCommand(), 1);
+        requires(Robot.drive_sub);
+        // Add Commands here:
+        // e.g. addSequential(new Command1());
+        // addSequential(new Command2());
+        // these will run in order.
+        addSequential(new autoDriveForwardCommand(), 1);
 
     /* To run multiple commands at the same time,
     // use addParallel()
@@ -31,5 +31,5 @@ public class AutoMoveForward extends CommandGroup {
     // Command1 and Command2 will run in parallel.
     */
 
-  }
+    }
 }

@@ -14,19 +14,19 @@ import frc.robot.Robot;
  * Add your docs here.
  */
 public class ShooterFeederSub extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
+    // Put methods for controlling this subsystem
+    // here. Call these from Commands.
 
-  @Override
-  public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
-  }
+    @Override
+    public void initDefaultCommand() {
+        // Set the default command for a subsystem here.
+        // setDefaultCommand(new MySpecialCommand());
+    }
 
-  public void shooterFeeder(double x){
-    
-    Robot.robotmap.shooterFeederControl.set(x);
+    public void shooterFeeder(double x) {
 
-  }
+        Robot.robotmap.shooterFeederControl.set(x);
+
+    }
 
 }

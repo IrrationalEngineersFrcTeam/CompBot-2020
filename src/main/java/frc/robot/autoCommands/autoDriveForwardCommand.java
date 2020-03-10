@@ -11,37 +11,37 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class autoDriveForwardCommand extends Command {
-  public autoDriveForwardCommand() {
-    requires(Robot.drive_sub);
-  }
+    public autoDriveForwardCommand() {
+        requires(Robot.drive_sub);
+    }
 
-  // Called just before this Command runs the first time
-  @Override
-  protected void initialize() {
-  }
+    // Called just before this Command runs the first time
+    @Override
+    protected void initialize() {
+    }
 
-  // Called repeatedly when this Command is scheduled to run
-  @Override
-  protected void execute() {    
-    Robot.drive_sub.ArcadeDrive(0.5, 0);
-  }
+    // Called repeatedly when this Command is scheduled to run
+    @Override
+    protected void execute() {
+        Robot.drive_sub.ArcadeDrive(0.5, 0);
+    }
 
-  // Make this return true when this Command no longer needs to run execute()
-  @Override
-  protected boolean isFinished() {
-    return false;
-  }
+    // Make this return true when this Command no longer needs to run execute()
+    @Override
+    protected boolean isFinished() {
+        return false;
+    }
 
-  // Called once after isFinished returns true
-  @Override
-  protected void end() {
-    Robot.drive_sub.ArcadeDrive(0, 0);
-  }
+    // Called once after isFinished returns true
+    @Override
+    protected void end() {
+        Robot.drive_sub.ArcadeDrive(0, 0);
+    }
 
-  // Called when another command which requires one or more of the same
-  // subsystems is scheduled to run
-  @Override
-  protected void interrupted() {
-    Robot.drive_sub.ArcadeDrive(0, 0);
-  }
+    // Called when another command which requires one or more of the same
+    // subsystems is scheduled to run
+    @Override
+    protected void interrupted() {
+        Robot.drive_sub.ArcadeDrive(0, 0);
+    }
 }
