@@ -40,7 +40,11 @@ public class DriveSub extends Subsystem {
 		Robot.robotmap.MotorL2Control.set(-SpeedL * PercentSpeed);
 		Robot.robotmap.MotorR1Control.set(SpeedR * PercentSpeed);
     Robot.robotmap.MotorR2Control.set(SpeedR * PercentSpeed); 
-    
+    System.out.println(Robot.robotmap.MotorL1Control.getBusVoltage());
+    System.out.println(Robot.robotmap.MotorL2Control.getBusVoltage());
+    System.out.println(Robot.robotmap.MotorR2Control.getBusVoltage());
+    System.out.println(Robot.robotmap.MotorR1Control.getBusVoltage());
+
   }
 
   public void ArcadeDrive(double DrivForward, double DriveTurn)
