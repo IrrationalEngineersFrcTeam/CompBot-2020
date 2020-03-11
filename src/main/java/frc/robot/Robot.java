@@ -12,8 +12,10 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.autoCommands.autoDriveForwardCommand;
 import frc.robot.commandGroups.AutoMoveForward;
 import frc.robot.commandGroups.ShootPowerCells;
 import frc.robot.commands.visionTrackinCommand;
@@ -47,6 +49,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     public static NetworkTableEntry ty;
     public static NetworkTableEntry tx;
     public static NetworkTableEntry ta;
+    public static NetworkTableEntry tv;
     public static NetworkTableEntry ledMode;
     public static NetworkTableEntry autonomousPos;
     public static NetworkTableEntry teleOpInit;
@@ -62,10 +65,10 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     public static PID pid2;
     public static double PIDTurn;
     public static double PIDSpeed;
-    public static double IsSeen;
     public static boolean seenToBool;
     public static boolean StartShooting;
     public static OI oi; // oi must be at the end!!!
+    public static CommandGroup auto;
 
     /*
      * Command m_autonomousCommand; SendableChooser<Command> m_chooser = new
@@ -94,6 +97,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
         tx = LimelightTable.getEntry("tx");
         ty = LimelightTable.getEntry("ty");
         ta = LimelightTable.getEntry("ta");
+        tv = LimelightTable.getEntry("tv");
         autonomousPos = SmartDashboard.getEntry("autonomousPos");
         teleOpInit = SmartDashboard.getEntry("teleOpInit");
         ledInt = 0;
@@ -101,6 +105,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
         shootPC = new ShootPowerCells();
         pid1 = new PID(0.01, 0.0, 0.0);
         pid2 = new PID(0.01, 0.0, 0.0);
+        seenToBool = tv.getBoolean(false);
 
         // oi needs to be at the end!!!!
         oi = new OI();
@@ -185,6 +190,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
         switch(autoPosChar)
          {
            case 'L': ;//calls the auto command for the left position
+           AutoVisTrack.start();
            break;
 
            case 'M': ;//calls the auto command for the middle position
@@ -194,12 +200,13 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
            break;
 
            case 'F':
-           
-           
-         }
+           auto = new AutoMoveForward();
+           auto.start();
+           break;
+         } 
 
-
-        // AutoVisTrack.start();
+       /* if(autoPosChar != 'F') 
+            AutoVisTrack.start(); */
 
         // m_autonomousCommand = m_chooser.getSelected();
 

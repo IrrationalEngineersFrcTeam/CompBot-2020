@@ -36,7 +36,7 @@ public class visionTrackinCommand extends Command {
         double DriveSpeed = Robot.visionsub.AdjustRoboDistance(96, Robot.visionsub.CurrentRoboDistance(Robot.VaY, 30, 30));
         double TurnSpeed = Robot.visionsub.VisionTurn(Robot.VaX);
 
-        if (Robot.IsSeen != 1)
+        if(Robot.seenToBool)
             Robot.drive_sub.TankDrive(.25, -.25);
 
         else {
