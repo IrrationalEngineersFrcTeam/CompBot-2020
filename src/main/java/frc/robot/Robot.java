@@ -105,7 +105,8 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
         shootPC = new ShootPowerCells();
         pid1 = new PID(0.01, 0.0, 0.0);
         pid2 = new PID(0.01, 0.0, 0.0);
-        seenToBool = tv.getBoolean(false);
+		seenToBool = (tv.getDouble(0.0) == 1) ? true : false;
+
 
         // oi needs to be at the end!!!!
         oi = new OI();
