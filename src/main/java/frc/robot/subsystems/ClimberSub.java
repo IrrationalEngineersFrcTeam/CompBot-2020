@@ -37,7 +37,7 @@ public class ClimberSub extends Subsystem {
 
     public void climbDown() {
 
-        Robot.robotmap.climberCtrl.set(1.248);
+        Robot.robotmap.climberCtrl.set(-1.248);
 
     }
 }
