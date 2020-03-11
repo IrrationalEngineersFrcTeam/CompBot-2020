@@ -141,7 +141,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
         PIDSpeed = Robot.visionsub.AdjustRoboDistance(180, Robot.visionsub.CurrentRoboDistance(VaY, 2.0, 23.75));
         //System.out.println(Robot.visionsub.AdjustRoboDistance(180, Robot.visionsub.CurrentRoboDistance(VaY, 2.0, 23.75)) / 12);
 
-        seenToBool = IsSeen == 1;
+        
 
         SmartDashboard.putNumber("LimelightX", VaX);
         SmartDashboard.putNumber("LimelightY", VaY);
@@ -180,19 +180,23 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     public void autonomousInit() {
 
 
-        // char autoPositionChar = autonomousPos.getString("M").charAt(0);//This code is currently not working because no NetworkTables entry for the autoChar string have been made
-        //char autoPositionChar = autoChar(getString("M").charAt(0));//This code is currently not working because no NetworkTables entry for the autoChar string have been made
-        // switch(autoPositionChar)
-        // {
-        //   case 'L': ;//calls the auto command for the left position
-        //   break;
+         char autoPosChar = autonomousPos.getString("F").charAt(0);//This code is currently not working because no NetworkTables entry for the autoChar string have been made
+        
+        switch(autoPosChar)
+         {
+           case 'L': ;//calls the auto command for the left position
+           break;
 
-        //   case 'M': ;//calls the auto command for the middle position
-        //   break;
+           case 'M': ;//calls the auto command for the middle position
+           break;
 
-        //   case 'R': ;//calls the auto command for the right position
-        //   break;
-        // }
+           case 'R': ;//calls the auto command for the right position
+           break;
+
+           case 'F':
+           
+           
+         }
 
 
         // AutoVisTrack.start();
@@ -227,7 +231,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
     public void teleopInit() {
 
         AutoVisTrack.cancel();
-        teleOpInit.setValue(2);
+        teleOpInit.setBoolean(true);
 
     }
 
