@@ -55,7 +55,7 @@ public class RobotMap {
 
         intakeMotor = 3;
         shootMotor0 = 1;
-        shootMotor1 = 8; //added late!
+        shootMotor1 = 9; //added late! (the reason we skip 8 is because climberMotor is can 8, but we use it as PWM 2)
         shooterFeederMotor = 4;
 
         MotorR1 = 5;
