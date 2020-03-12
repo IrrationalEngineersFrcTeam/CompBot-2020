@@ -29,7 +29,7 @@ public class shootCommand extends Command {
     @Override
     protected void execute() {
 
-        Robot.shootersub.shoot();
+        Robot.shootersub.shoot(Robot.shootersub.velocity(Robot.visionsub.CurrentRoboDistance(Robot.VaY, 30, 30), (Math.PI/6), 2.5));
         System.out.println("Shooting!");
 
     }

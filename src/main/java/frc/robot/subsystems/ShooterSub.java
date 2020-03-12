@@ -27,11 +27,20 @@ public class ShooterSub extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
 
-    //set to %50 for testing purposes only, remember to put it up again
-    public void shoot() {
+    public double velocity(double dist, double angle, double height) {
 
-        Robot.robotmap.shootCtrl0.set(-1);
-        Robot.robotmap.shootCtrl1.set(-1);
+      double  v0 = Math.sqrt((9.8*(Math.pow(dist,2))/(2*dist*(Math.sin(angle))*(Math.cos(angle)))-(2*height*(Math.pow(Math.cos(angle),2)))));
+
+      return v0;
+    }
+
+    //set to %50 for testing purposes only, remember to put it up again
+    public void shoot(double v0) {
+        
+
+        Robot.robotmap.shootCtrl0.set(v0);
+        Robot.robotmap.shootCtrl1.set(v0);
 
     }
+
 }

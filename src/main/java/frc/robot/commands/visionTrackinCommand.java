@@ -45,7 +45,7 @@ public class visionTrackinCommand extends Command {
             Robot.drive_sub.ArcadeDrive(DriveSpeed, TurnSpeed);
 
             if (TurnSpeed == 0) {
-                Robot.shootersub.shoot();
+                Robot.shootersub.shoot(Robot.shootersub.velocity(Robot.visionsub.CurrentRoboDistance(Robot.VaY, 30, 30), (Math.PI/6), 2.5));
             }
 
         }
