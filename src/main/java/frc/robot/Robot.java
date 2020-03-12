@@ -133,7 +133,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
         indexInitLST = indexInitialLimitSwitch.get();
         indexEndLST = indexEndingLimitSwitch.get();
         //System.out.println(indexInitLST);
-
+        
         //Default Red Blue balances of the limelight are 1200 and 1975 respectivly
         VaX = tx.getDouble(0.0);
         VaY = ty.getDouble(0.0);
@@ -148,7 +148,7 @@ public class Robot extends TimedRobot { // does not actually mean TimedRobot!!!
         //System.out.println(Robot.visionsub.AdjustRoboDistance(180, Robot.visionsub.CurrentRoboDistance(VaY, 2.0, 23.75)) / 12);
 
         
-
+        SmartDashboard.putNumber("dist", Robot.visionsub.CurrentRoboDistance(Robot.VaY, 30, 30));
         SmartDashboard.putNumber("LimelightX", VaX);
         SmartDashboard.putNumber("LimelightY", VaY);
         SmartDashboard.putNumber("LimelightArea", VTA);
