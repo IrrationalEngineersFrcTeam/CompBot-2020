@@ -36,8 +36,8 @@ public class DriveCommand extends Command {
         //These will be usefull to the drive subsystem
         // double SpeedXL = Robot.oi.sticcL.getX();
         //double SpeedXR = Robot.oi.sticcR.getX();
-        double SpeedL = Robot.oi.sticcL.getY();
-        double SpeedR = Robot.oi.sticcR.getY();
+        double SpeedL = Robot.oi.stickL.getY();
+        double SpeedR = Robot.oi.stickR.getY();
 
 
         //This gets the PIDTurn variable in robot, which is tied to the PID calculations

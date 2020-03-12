@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------------*/
 /* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
-/* must be accompanied by the FIRST BSD license file in the root directory of */
+/* must be ackompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
@@ -21,8 +21,8 @@ import frc.robot.commands.*;
 public class OI {
 
     //This is the place where you create joysticks
-    public Joystick sticcL;
-    public Joystick sticcR;
+    public Joystick stickL;
+    public Joystick stickR;
 
     //This is the place where you create buttons
     public Button intakeButton;
@@ -33,24 +33,25 @@ public class OI {
     public Button climbDownButton;
     public Button visionTracking;
     public Button ShootPowerCells;
+    
 
 
     public OI() {
 
         //This is where you initialize the joysticks
-        sticcL = new Joystick(0);
-        sticcR = new Joystick(1);
+        stickL = new Joystick(0);
+        stickR = new Joystick(1);
 
         //This is where you initialize the buttons
-        intakeButton = new JoystickButton(sticcL, 2);
-        triggerShoot = new JoystickButton(sticcL, 1);
-        indexRunIn = new JoystickButton(sticcR, 2);
-        indexRunOut = new JoystickButton(sticcR, 8);
-        visionTracking = new JoystickButton(sticcR, 1);
-        climbButton = new JoystickButton(sticcL, 5);//Change to an appropriate button later
-        climbDownButton = new JoystickButton(sticcL, 10);
+        intakeButton = new JoystickButton(stickL, 2);
+        triggerShoot = new JoystickButton(stickL, 1);
+        indexRunIn = new JoystickButton(stickR, 2);
+        indexRunOut = new JoystickButton(stickR, 8);
+        visionTracking = new JoystickButton(stickR, 1);
+        climbButton = new JoystickButton(stickL, 5);//Change to an appropriate button later
+        climbDownButton = new JoystickButton(stickL, 10);
 
-        ShootPowerCells = new JoystickButton(sticcR, 5);//Change to appropriate button later
+        ShootPowerCells = new JoystickButton(stickR, 5);//Change to appropriate button later
 
         //This is where you give the button it's functionality
         intakeButton.whileHeld(new intakeRollerCommand());
@@ -61,7 +62,7 @@ public class OI {
         climbDownButton.whileHeld(new climbDownCommand());
 
         //Command Groups
-        ShootPowerCells.whileHeld(new ShootPowerCells());//We may change the type of trigger this is later, for now this button is for testing
+        ShootPowerCells.whileHeld(new ShootPowerCells());
 
 
     }
